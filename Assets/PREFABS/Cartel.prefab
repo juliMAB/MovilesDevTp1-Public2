@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400016}
   m_Layer: 0
-  m_Name: CartelDeposito
+  m_Name: Cartel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

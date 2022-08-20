@@ -7931,7 +7931,7 @@ GameObject:
   - component: {fileID: 114672682756068064}
   - component: {fileID: 114630957717379974}
   m_Layer: 8
-  m_Name: Camion - new
+  m_Name: Camion
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
