@@ -9,5 +9,5 @@ class ScoreChangedCommand : ICommand
     {
         get;
         set;
-    }
+    } 
 }

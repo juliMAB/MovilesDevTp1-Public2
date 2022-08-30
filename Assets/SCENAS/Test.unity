@@ -123,6 +123,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &187174109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3922992565850302549, guid: e2397c92d495b494eaf44a9ce445a3ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8298449675451534861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187174113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187174109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2c702aab2c659448bd1616a30a7122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  mediator: {fileID: 465599584}
 --- !u!1 &428961320
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +300,7 @@ MonoBehaviour:
   particleSystem: {fileID: 1452480597}
   visual: {fileID: 4294078331543161847}
   collider: {fileID: 1452480593}
+  value: 10
 --- !u!198 &1452480597
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5449,6 +5470,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2940090246280636309, guid: e2397c92d495b494eaf44a9ce445a3ee,
+        type: 3}
+      propertyPath: forceAcceleration
+      value: 48000
+      objectReference: {fileID: 0}
     - target: {fileID: 3922992565850302549, guid: e2397c92d495b494eaf44a9ce445a3ee,
         type: 3}
       propertyPath: m_Name
@@ -5472,7 +5498,7 @@ PrefabInstance:
     - target: {fileID: 3922992565850666101, guid: e2397c92d495b494eaf44a9ce445a3ee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6.39
       objectReference: {fileID: 0}
     - target: {fileID: 3922992565850666101, guid: e2397c92d495b494eaf44a9ce445a3ee,
         type: 3}
