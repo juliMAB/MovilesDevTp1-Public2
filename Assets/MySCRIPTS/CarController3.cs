@@ -19,26 +19,22 @@ public class CarController3 : MonoBehaviour
         public Axie axie;
     }
 
-    [SerializeField] private float maxAcceleration = 30.0f;
     [SerializeField] private float forceAcceleration = 600.0f;
 
     [SerializeField] private float maxSteerAngle = 30.0f;
 
-    [SerializeField] private float turnSensitivity = 1.0f;
-
+    [SerializeField] private bool inputEnabled = true;
 
     [SerializeField] private List<Wheel> _wheels;
 
-    public Vector3 _centerOfMass;
     private float moveInput;
     private float steerInput;
-
     private Rigidbody carRb;
 
     private void Start()
     {
         carRb = GetComponent<Rigidbody>();
-        carRb.centerOfMass = _centerOfMass;
+        carRb.centerOfMass = Vector3.zero;
     }
 
 
@@ -57,6 +53,8 @@ public class CarController3 : MonoBehaviour
     }
     private void GetInput()
     {
+        if (!inputEnabled)
+            return;
         moveInput = Input.GetAxis("Vertical");
         steerInput = Input.GetAxis("Horizontal");
     }
@@ -65,7 +63,7 @@ public class CarController3 : MonoBehaviour
     {
         foreach (var item in _wheels)
         {
-            item.wheelCollider.motorTorque = moveInput * forceAcceleration * maxAcceleration * Time.deltaTime;
+            item.wheelCollider.motorTorque = moveInput * forceAcceleration * Time.deltaTime;
         }
     }
 
@@ -76,7 +74,7 @@ public class CarController3 : MonoBehaviour
         {
             if (wheel.axie == Axie.Front)
             {
-                var _steerAngle = steerInput * turnSensitivity * maxSteerAngle;
+                var _steerAngle = steerInput * maxSteerAngle;
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
             }
         }
