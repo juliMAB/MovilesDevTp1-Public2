@@ -3478,6 +3478,7 @@ GameObject:
   - component: {fileID: 6503082563260895795}
   - component: {fileID: 3922992565850302548}
   - component: {fileID: 2940090246280636309}
+  - component: {fileID: 187174113}
   m_Layer: 0
   m_Name: camionGame_29_8
   m_TagString: Untagged
@@ -3541,10 +3542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1235abe0b36d34fab6bb68e8a52449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAcceleration: 30
-  forceAcceleration: 600
+  forceAcceleration: 48000
   maxSteerAngle: 30
-  turnSensitivity: 1
+  inputEnabled: 1
   _wheels:
   - wheelModel: {fileID: 3922992565850302861}
     wheelCollider: {fileID: 8298449675323472115}
@@ -3558,7 +3558,20 @@ MonoBehaviour:
   - wheelModel: {fileID: 3922992565850302971}
     wheelCollider: {fileID: 8298449676095742240}
     axie: 1
-  _centerOfMass: {x: 0, y: 0, z: 0}
+--- !u!114 &187174113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922992565850302549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2c702aab2c659448bd1616a30a7122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  mediator: {fileID: 0}
 --- !u!1 &3922992565850302551
 GameObject:
   m_ObjectHideFlags: 0
