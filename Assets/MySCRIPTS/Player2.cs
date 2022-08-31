@@ -18,7 +18,7 @@ public class Player2 : MonoBehaviour, Idownloadable
 
     private void Start()
     {
-        respawnPoint = Vector3.zero;
+        respawnPoint = transform.position;
         mediator.Subscribe<DepositChangedCommand>(OutDeposit);
     }
 
