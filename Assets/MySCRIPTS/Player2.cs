@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2 : MonoBehaviour
+public class Player2 : MonoBehaviour, Idownloadable
 {
     [SerializeField] private float score;
     ScoreChangedCommand scoreChange = new ScoreChangedCommand();
@@ -10,6 +10,8 @@ public class Player2 : MonoBehaviour
 
     [SerializeField] private Vector3 respawnPoint;
     [SerializeField] private Rigidbody rb;
+
+    [SerializeField] private int bolsasAmount = 0;
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class Player2 : MonoBehaviour
             score = ipickapeable.Catch();
             scoreChange.ScoreOnTruck = score;
             mediator.Publish(scoreChange);
+            bolsasAmount++;
             return;
         }
         Irespawneable irespawneable = other.GetComponent<Irespawneable>();
@@ -48,5 +51,15 @@ public class Player2 : MonoBehaviour
         {
             Respawn();
         }
+    }
+
+    public bool HasBags()
+    {
+        return bolsasAmount>0;
+    }
+
+    public void StopCar()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
