@@ -6,6 +6,9 @@ public class Player2 : MonoBehaviour, Idownloadable
 {
     [SerializeField] private float score;
     ScoreChangedCommand scoreChange = new ScoreChangedCommand();
+    DepositChangedCommand depositChange = new DepositChangedCommand();
+    [SerializeField] private Camera camera;
+
     [SerializeField] private Mediator mediator;
 
     [SerializeField] private Vector3 respawnPoint;
@@ -16,6 +19,7 @@ public class Player2 : MonoBehaviour, Idownloadable
     private void Start()
     {
         respawnPoint = Vector3.zero;
+        mediator.Subscribe<DepositChangedCommand>(OutDeposit);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,5 +65,27 @@ public class Player2 : MonoBehaviour, Idownloadable
     public void StopCar()
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
+    }
+    private void StartCar()
+    {
+        rb.constraints = RigidbodyConstraints.None;
+    }
+
+    public void IntroDeposit()
+    {
+        depositChange.BagsCuantity = bolsasAmount;
+        depositChange.OnDeposit = true;
+        mediator.Publish(depositChange);
+        camera.gameObject.SetActive(false);
+    }
+
+    private void OutDeposit(DepositChangedCommand c)
+    {
+        if (c.OnDeposit)
+            return;
+        depositChange.OnDeposit = false;
+        bolsasAmount = 0;
+        camera.gameObject.SetActive(true);
+        StartCar();
     }
 }

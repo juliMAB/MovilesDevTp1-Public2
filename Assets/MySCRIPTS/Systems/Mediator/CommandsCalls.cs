@@ -1,3 +1,4 @@
+
 class ScoreChangedCommand : ICommand
 {
     public float ScoreOnTruck
@@ -10,4 +11,17 @@ class ScoreChangedCommand : ICommand
         get;
         set;
     } 
+}
+class DepositChangedCommand : ICommand
+{
+    public int BagsCuantity
+    {
+        get;
+        set;
+    }
+    public bool OnDeposit
+    {
+        get;
+        set;
+    }
 }

@@ -14,6 +14,9 @@ public interface Idownloadable
     bool HasBags();
 
     void StopCar();
+
+    void IntroDeposit();
+
 }
 
 
