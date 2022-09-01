@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 
 public class BolsaMoveAnim : MonoBehaviour
@@ -11,7 +13,10 @@ public class BolsaMoveAnim : MonoBehaviour
     [SerializeField] private Transform[] pos;
     [SerializeField, Range(0, 4)] private int state;
     [SerializeField, Range(0, 1)] private float speedPerStage;
+    [SerializeField] private float bonusTime;
     private Coroutine currentAnim = null;
+
+    private Coroutine BonusAnim = null;
 
     [SerializeField] private int bolsasDisponibles = 3;
 
@@ -19,15 +24,30 @@ public class BolsaMoveAnim : MonoBehaviour
 
     [SerializeField] private bool input = false;
 
+    [SerializeField] Slider bonusProgress = null;
+
+    [SerializeField] Mediator mediator = null;
+
     private Action OnEndDescarga; 
 
     private float horizontalValue;
     private float VerticalValue;
 
-    public void Init(ref Action OnEndDescarga , int bolsas)
+    private ScoreChangedCommand c = new ScoreChangedCommand();
+
+    private float localscore;
+
+    public void Init(ref Action OnEndDescarga, int bolsas)
     {
         this.OnEndDescarga = OnEndDescarga;
         this.OnEndDescarga += Restart;
+        mediator.Subscribe<ScoreChangedCommand>(GetScoreOnMediator);
+
+    }
+
+    private void GetScoreOnMediator(ScoreChangedCommand c)
+    {
+        this.c = c;
     }
     public void MyStart(int bolsasCuantity)
     {
@@ -40,6 +60,11 @@ public class BolsaMoveAnim : MonoBehaviour
         currentBag = 0;
         bolsasDisponibles = 0;
         input = false;
+        bonusProgress.gameObject.SetActive(false);
+        if (BonusAnim != null)
+        {
+            BonusAnim = null;
+        }
     }
     private void Update()
     {
@@ -56,6 +81,15 @@ public class BolsaMoveAnim : MonoBehaviour
                         StopCoroutine(currentAnim);
                     currentAnim = StartCoroutine(AnimMove(pos[0].position, pos[1].position, bolsa[currentBag].transform));
                     state = 1;
+                    if(bonusProgress!=null && !bonusProgress.gameObject.activeSelf)
+                    {
+
+                        bonusProgress.gameObject.SetActive(true);
+                        bonusProgress.value = bonusProgress.maxValue;
+                    }
+                    if(BonusAnim == null)
+                        BonusAnim = StartCoroutine(AnimMoveSlider(bonusTime));
+                    
                 }
                 return;
             case 1:
@@ -82,6 +116,18 @@ public class BolsaMoveAnim : MonoBehaviour
                 return;
             case 4:
                 currentBag++;
+                if (bonusProgress != null && bonusProgress.enabled)
+                {
+                    c.ScoreOnGlobal += bonusProgress.value * Bolsa2.GetValue();
+                    mediator.Publish(c);
+                    if(BonusAnim!=null)
+                        StopCoroutine(BonusAnim);
+                    bonusProgress.gameObject.SetActive(false);
+                }
+                else
+                {
+                    c.ScoreOnGlobal = bonusProgress.value;
+                }
                 state = 0;
                 if (currentBag == bolsasDisponibles)
                     OnEndDescarga?.Invoke();
@@ -102,18 +148,6 @@ public class BolsaMoveAnim : MonoBehaviour
         VerticalValue = Input.GetAxis("Vertical");
     }
 
-    IEnumerator AnimMove(Vector3 origin,Vector3 destino,Transform bag,Action LastCall)
-    {
-        float currentTime = 0;
-        while (currentTime< speedPerStage)
-        {
-            currentTime += Time.deltaTime;
-            bag.position = Vector3.Lerp(origin, destino, currentTime / speedPerStage);
-            yield return null;
-        }
-        currentAnim = null;
-        LastCall?.Invoke();
-    }
     IEnumerator AnimMove(Vector3 origin, Vector3 destino, Transform bag)
     {
         float currentTime = 0;
@@ -136,5 +170,19 @@ public class BolsaMoveAnim : MonoBehaviour
         }
         bag.gameObject.SetActive(false);
         state = 4;
+    }
+
+    IEnumerator AnimMoveSlider(float time)
+    {
+        float totaltime = time;
+        while (time>0)
+        {
+            time -= Time.deltaTime;
+            bonusProgress.value = bonusProgress.maxValue - (bonusProgress.maxValue / totaltime * time);
+            yield return null;
+        }
+        bonusProgress.value = 0;
+        BonusAnim = null;
+        bonusProgress.gameObject.SetActive(false);
     }
 }

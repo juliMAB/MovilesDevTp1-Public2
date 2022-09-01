@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ManagerDescarga : MonoBehaviour
 {
@@ -21,21 +20,21 @@ public class ManagerDescarga : MonoBehaviour
     {
         OnEndDeposit += EndDeposit;
 
-        mediator.Subscribe<DepositChangedCommand>(InitDeposit);
+       mediator.Subscribe<DepositChangedCommand>(InitDeposit);
         
         animatorMoveAnim.Init(ref OnEndDeposit,bolsas);
     }
 
-    private void InitDeposit(DepositChangedCommand c)
-    {
-        if (!c.OnDeposit)
-            return;
-        camera.gameObject.SetActive(true);
-        animator.enabled = true;
-        animator.Play("StartDeposit");
-        animatorMoveAnim.MyStart(c.BagsCuantity);
-        canvas.gameObject.SetActive(true);
-    }
+   private void InitDeposit(DepositChangedCommand c)
+   {
+       if (!c.OnDeposit)
+           return;
+       camera.gameObject.SetActive(true);
+       animator.enabled = true;
+       animator.Play("StartDeposit");
+       animatorMoveAnim.MyStart(c.BagsCuantity);
+       canvas.gameObject.SetActive(true);
+   }
     private void EndDeposit()
     {
         instructivo.Play("InstructivoDone");

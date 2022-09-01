@@ -8,6 +8,7 @@ public class CanvasGameManager : MonoBehaviour
     [SerializeField] Mediator mediator;
 
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI text2;
 
     private void Start()
     {
@@ -17,5 +18,8 @@ public class CanvasGameManager : MonoBehaviour
     void ScoreChangeUI(ScoreChangedCommand c)
     {
         text.text = "Truck: " + c.ScoreOnTruck.ToString();
+        text2.text = "Total: " + c.ScoreOnGlobal.ToString();
     }
+
+
 }

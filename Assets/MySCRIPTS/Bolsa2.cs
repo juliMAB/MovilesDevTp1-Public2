@@ -8,8 +8,17 @@ public class Bolsa2 : MonoBehaviour, Ipickapeable
 	[SerializeField] private ParticleSystem particleSystem;
 	[SerializeField] private MeshRenderer visual;
 	[SerializeField] private Collider collider;
-	[SerializeField] private float value;
+	[SerializeField] private float valuE;
+	[SerializeField] static private float value;
 
+	private void OnValidate()
+	{
+		value = valuE;
+	}
+	static public float GetValue()
+	{
+		return value;
+	}
 
 	private void Start()
     {

@@ -25,7 +25,7 @@ public class Player2 : MonoBehaviour, Idownloadable
         Ipickapeable ipickapeable = other.GetComponent<Ipickapeable>();
         if (ipickapeable!=null)
         {
-            score = ipickapeable.Catch();
+            score += ipickapeable.Catch();
             scoreChange.ScoreOnTruck = score;
             mediator.Publish(scoreChange);
             bolsasAmount++;
