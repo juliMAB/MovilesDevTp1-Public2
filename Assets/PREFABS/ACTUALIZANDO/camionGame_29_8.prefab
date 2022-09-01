@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5547849978483137928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721007512396306036}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5491130059065000534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3922992565850666017}
   - component: {fileID: 3922992565853533197}
   - component: {fileID: 3922992565852567117}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Luces delanteras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3922992565850666019}
   - component: {fileID: 3922992565853533199}
   - component: {fileID: 3922992565852567119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 3922992565850666021}
   - component: {fileID: 3922992565853533185}
   - component: {fileID: 3922992565852567105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 3922992565850666023}
   - component: {fileID: 3922992565853533187}
   - component: {fileID: 3922992565852567107}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 3922992565850666025}
   - component: {fileID: 3922992565853533237}
   - component: {fileID: 3922992565852567157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 3922992565850666027}
   - component: {fileID: 3922992565853533239}
   - component: {fileID: 3922992565852567159}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: L_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 3922992565850666029}
   - component: {fileID: 3922992565853533193}
   - component: {fileID: 3922992565852567113}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 3922992565850666031}
   - component: {fileID: 3922992565853533195}
   - component: {fileID: 3922992565852567115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: R_Ft_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 3922992565850666033}
   - component: {fileID: 3922992565853533213}
   - component: {fileID: 3922992565852567133}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 3922992565850666035}
   - component: {fileID: 3922992565853533215}
   - component: {fileID: 3922992565852567135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 3922992565850666037}
   - component: {fileID: 3922992565853533201}
   - component: {fileID: 3922992565852567121}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3922992565850666039}
   - component: {fileID: 3922992565853533203}
   - component: {fileID: 3922992565852567123}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 3922992565850666041}
   - component: {fileID: 3922992565853533189}
   - component: {fileID: 3922992565852567109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 3922992565850666043}
   - component: {fileID: 3922992565853533191}
   - component: {fileID: 3922992565852567111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 3922992565850666045}
   - component: {fileID: 3922992565853533209}
   - component: {fileID: 3922992565852567129}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 3922992565850666047}
   - component: {fileID: 3922992565853533211}
   - component: {fileID: 3922992565852567131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Manija 007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 3922992565850666049}
   - component: {fileID: 3922992565853533229}
   - component: {fileID: 3922992565852567149}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 3922992565850666051}
   - component: {fileID: 3922992565853533231}
   - component: {fileID: 3922992565852567151}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1593,7 @@ GameObject:
   - component: {fileID: 3922992565850666053}
   - component: {fileID: 3922992565853533217}
   - component: {fileID: 3922992565852567137}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 3922992565850666055}
   - component: {fileID: 3922992565853533219}
   - component: {fileID: 3922992565852567139}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,7 +1759,7 @@ GameObject:
   - component: {fileID: 3922992565850666057}
   - component: {fileID: 3922992565853533269}
   - component: {fileID: 3922992565852567189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1840,7 +1840,7 @@ GameObject:
   - component: {fileID: 3922992565850666059}
   - component: {fileID: 3922992565853533271}
   - component: {fileID: 3922992565852567191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 3922992565850666061}
   - component: {fileID: 3922992565853533225}
   - component: {fileID: 3922992565852567145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2004,7 +2004,7 @@ GameObject:
   - component: {fileID: 3922992565850666063}
   - component: {fileID: 3922992565853533227}
   - component: {fileID: 3922992565852567147}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 3922992565850666065}
   - component: {fileID: 3922992565853533245}
   - component: {fileID: 3922992565852567165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 3922992565850666067}
   - component: {fileID: 3922992565853533247}
   - component: {fileID: 3922992565852567167}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_c
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2249,7 @@ GameObject:
   - component: {fileID: 3922992565850666071}
   - component: {fileID: 3922992565853533235}
   - component: {fileID: 3922992565852567155}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Espejos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2331,7 +2331,7 @@ GameObject:
   - component: {fileID: 3922992565850666073}
   - component: {fileID: 3922992565853533221}
   - component: {fileID: 3922992565852567141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2414,7 @@ GameObject:
   - component: {fileID: 3922992565850666075}
   - component: {fileID: 3922992565853533223}
   - component: {fileID: 3922992565852567143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2497,7 +2497,7 @@ GameObject:
   - component: {fileID: 3922992565850666077}
   - component: {fileID: 3922992565853533241}
   - component: {fileID: 3922992565852567161}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_c
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2578,7 +2578,7 @@ GameObject:
   - component: {fileID: 3922992565850666079}
   - component: {fileID: 3922992565853533243}
   - component: {fileID: 3922992565852567163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 3922992565850666081}
   - component: {fileID: 3922992565853533249}
   - component: {fileID: 3922992565852567169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2742,7 @@ GameObject:
   - component: {fileID: 3922992565850666083}
   - component: {fileID: 3922992565853533251}
   - component: {fileID: 3922992565852567171}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2823,7 +2823,7 @@ GameObject:
   - component: {fileID: 3922992565850666085}
   - component: {fileID: 3922992565853533253}
   - component: {fileID: 3922992565852567173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2905,7 +2905,7 @@ GameObject:
   - component: {fileID: 3922992565850666087}
   - component: {fileID: 3922992565853533255}
   - component: {fileID: 3922992565852567175}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Holder_All_Bc_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2987,7 +2987,7 @@ GameObject:
   - component: {fileID: 3922992565850666089}
   - component: {fileID: 3922992565853533257}
   - component: {fileID: 3922992565852567177}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 124
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3069,7 @@ GameObject:
   - component: {fileID: 3922992565850666091}
   - component: {fileID: 3922992565853533259}
   - component: {fileID: 3922992565852567179}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3150,7 +3150,7 @@ GameObject:
   - component: {fileID: 3922992565850666093}
   - component: {fileID: 3922992565853533261}
   - component: {fileID: 3922992565852567181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3231,7 +3231,7 @@ GameObject:
   - component: {fileID: 3922992565850666095}
   - component: {fileID: 3922992565853533263}
   - component: {fileID: 3922992565852567183}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3315,7 +3315,7 @@ GameObject:
   - component: {fileID: 3922992565850666097}
   - component: {fileID: 3922992565853533267}
   - component: {fileID: 3922992565852567187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 3922992565850666099}
   - component: {fileID: 3922992565853533277}
   - component: {fileID: 3922992565852567197}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3479,7 @@ GameObject:
   - component: {fileID: 3922992565850302548}
   - component: {fileID: 2940090246280636309}
   - component: {fileID: 187174113}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: camionGame_29_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3571,7 +3571,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  camera: {fileID: 0}
   mediator: {fileID: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  rb: {fileID: 6503082563260895795}
+  bolsasAmount: 0
 --- !u!1 &3922992565850302551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,7 +3587,7 @@ GameObject:
   - component: {fileID: 3922992565850666103}
   - component: {fileID: 3922992565853533265}
   - component: {fileID: 3922992565852567185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3664,7 +3668,7 @@ GameObject:
   - component: {fileID: 3922992565850666105}
   - component: {fileID: 3922992565853533275}
   - component: {fileID: 3922992565852567195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3745,7 +3749,7 @@ GameObject:
   - component: {fileID: 3922992565850666109}
   - component: {fileID: 3922992565853533279}
   - component: {fileID: 3922992565852567199}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3826,7 +3830,7 @@ GameObject:
   - component: {fileID: 3922992565850666111}
   - component: {fileID: 3922992565853533273}
   - component: {fileID: 3922992565852567193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Retrovisor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3908,7 +3912,7 @@ GameObject:
   - component: {fileID: 3922992565850666403}
   - component: {fileID: 3922992565853533579}
   - component: {fileID: 3922992565852567499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_Bc_Lt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3990,7 +3994,7 @@ GameObject:
   - component: {fileID: 3922992565850666409}
   - component: {fileID: 3922992565853533617}
   - component: {fileID: 3922992565852567537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel - Front piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4071,7 +4075,7 @@ GameObject:
   - component: {fileID: 3922992565850666411}
   - component: {fileID: 3922992565853533619}
   - component: {fileID: 3922992565852567539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel - Buyer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4154,7 +4158,7 @@ GameObject:
   - component: {fileID: 3922992565850666413}
   - component: {fileID: 3922992565853533621}
   - component: {fileID: 3922992565852567541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_Fr_Lt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4236,7 +4240,7 @@ GameObject:
   - component: {fileID: 3922992565850666415}
   - component: {fileID: 3922992565853533623}
   - component: {fileID: 3922992565852567543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel - Front piece 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4317,7 +4321,7 @@ GameObject:
   - component: {fileID: 3922992565850666433}
   - component: {fileID: 3922992565853533609}
   - component: {fileID: 3922992565852567529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4400,7 +4404,7 @@ GameObject:
   - component: {fileID: 3922992565850666435}
   - component: {fileID: 3922992565853533611}
   - component: {fileID: 3922992565852567531}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4483,7 +4487,7 @@ GameObject:
   - component: {fileID: 3922992565850666437}
   - component: {fileID: 3922992565853533613}
   - component: {fileID: 3922992565852567533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Safe Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4568,7 +4572,7 @@ GameObject:
   - component: {fileID: 3922992565850666439}
   - component: {fileID: 3922992565853533615}
   - component: {fileID: 3922992565852567535}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4651,7 +4655,7 @@ GameObject:
   - component: {fileID: 3922992565850666441}
   - component: {fileID: 3922992565853533649}
   - component: {fileID: 3922992565852567057}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4734,7 +4738,7 @@ GameObject:
   - component: {fileID: 3922992565850666443}
   - component: {fileID: 3922992565853533651}
   - component: {fileID: 3922992565852567059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,7 +4821,7 @@ GameObject:
   - component: {fileID: 3922992565850666445}
   - component: {fileID: 3922992565853533653}
   - component: {fileID: 3922992565852567061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4900,7 +4904,7 @@ GameObject:
   - component: {fileID: 3922992565850666447}
   - component: {fileID: 3922992565853533655}
   - component: {fileID: 3922992565852567063}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4983,7 +4987,7 @@ GameObject:
   - component: {fileID: 3922992565850666449}
   - component: {fileID: 3922992565853533625}
   - component: {fileID: 3922992565852567545}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5082,7 +5086,7 @@ GameObject:
   - component: {fileID: 3922992565850666451}
   - component: {fileID: 3922992565853533627}
   - component: {fileID: 3922992565852567547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Volante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5163,7 +5167,7 @@ GameObject:
   - component: {fileID: 3922992565850666453}
   - component: {fileID: 3922992565853533629}
   - component: {fileID: 3922992565852567549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel - Buyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5245,7 +5249,7 @@ GameObject:
   - component: {fileID: 3922992565850666455}
   - component: {fileID: 3922992565853533631}
   - component: {fileID: 3922992565852567551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ft_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5326,7 +5330,7 @@ GameObject:
   - component: {fileID: 3922992565850666457}
   - component: {fileID: 3922992565853533601}
   - component: {fileID: 3922992565852567521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Luces_bc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5410,7 +5414,7 @@ GameObject:
   - component: {fileID: 3922992565850666459}
   - component: {fileID: 3922992565853533603}
   - component: {fileID: 3922992565852567523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Safe Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,7 +5499,7 @@ GameObject:
   - component: {fileID: 3922992565850666461}
   - component: {fileID: 3922992565853533605}
   - component: {fileID: 3922992565852567525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tornillos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5576,7 +5580,7 @@ GameObject:
   - component: {fileID: 3922992565850666463}
   - component: {fileID: 3922992565853533607}
   - component: {fileID: 3922992565852567527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Luces_bc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5660,7 +5664,7 @@ GameObject:
   - component: {fileID: 3922992565850666467}
   - component: {fileID: 3922992565853533643}
   - component: {fileID: 3922992565852567051}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5741,7 +5745,7 @@ GameObject:
   - component: {fileID: 3922992565850666469}
   - component: {fileID: 3922992565853533645}
   - component: {fileID: 3922992565852567053}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5822,7 +5826,7 @@ GameObject:
   - component: {fileID: 3922992565850666471}
   - component: {fileID: 3922992565853533647}
   - component: {fileID: 3922992565852567055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: reflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5904,7 +5908,7 @@ GameObject:
   - component: {fileID: 3922992565850666473}
   - component: {fileID: 3922992565853533681}
   - component: {fileID: 3922992565852567089}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Reflex_bc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5985,7 +5989,7 @@ GameObject:
   - component: {fileID: 3922992565850666475}
   - component: {fileID: 3922992565853533683}
   - component: {fileID: 3922992565852567091}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6067,7 +6071,7 @@ GameObject:
   - component: {fileID: 3922992565850666477}
   - component: {fileID: 3922992565853533685}
   - component: {fileID: 3922992565852567093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Guardabarro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6148,7 +6152,7 @@ GameObject:
   - component: {fileID: 3922992565850666479}
   - component: {fileID: 3922992565853533687}
   - component: {fileID: 3922992565852567095}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Patente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6229,7 +6233,7 @@ GameObject:
   - component: {fileID: 3922992565850666481}
   - component: {fileID: 3922992565853533657}
   - component: {fileID: 3922992565852567065}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6310,7 +6314,7 @@ GameObject:
   - component: {fileID: 3922992565850666483}
   - component: {fileID: 3922992565853533659}
   - component: {fileID: 3922992565852567067}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6391,7 +6395,7 @@ GameObject:
   - component: {fileID: 3922992565850666485}
   - component: {fileID: 3922992565853533661}
   - component: {fileID: 3922992565852567069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Puerta Caja Seguridad 005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6474,7 +6478,7 @@ GameObject:
   - component: {fileID: 3922992565850666487}
   - component: {fileID: 3922992565853533663}
   - component: {fileID: 3922992565852567071}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6555,7 +6559,7 @@ GameObject:
   - component: {fileID: 3922992565850666489}
   - component: {fileID: 3922992565853533633}
   - component: {fileID: 3922992565852567041}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6640,7 @@ GameObject:
   - component: {fileID: 3922992565850666491}
   - component: {fileID: 3922992565853533635}
   - component: {fileID: 3922992565852567043}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6717,7 +6721,7 @@ GameObject:
   - component: {fileID: 3922992565850666493}
   - component: {fileID: 3922992565853533637}
   - component: {fileID: 3922992565852567045}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6798,7 +6802,7 @@ GameObject:
   - component: {fileID: 3922992565850666495}
   - component: {fileID: 3922992565853533639}
   - component: {fileID: 3922992565852567047}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Perilla 008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6879,7 +6883,7 @@ GameObject:
   - component: {fileID: 3922992565850665985}
   - component: {fileID: 3922992565853533677}
   - component: {fileID: 3922992565852567085}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: L_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6964,7 +6968,7 @@ GameObject:
   - component: {fileID: 3922992565850665987}
   - component: {fileID: 3922992565853533679}
   - component: {fileID: 3922992565852567087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Middle Left Door - Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7046,7 +7050,7 @@ GameObject:
   - component: {fileID: 3922992565850665989}
   - component: {fileID: 3922992565853533665}
   - component: {fileID: 3922992565852567073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: R_Door_in
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7129,7 +7133,7 @@ GameObject:
   - component: {fileID: 3922992565850665991}
   - component: {fileID: 3922992565853533667}
   - component: {fileID: 3922992565852567075}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7210,7 +7214,7 @@ GameObject:
   - component: {fileID: 3922992565850665993}
   - component: {fileID: 3922992565853533205}
   - component: {fileID: 3922992565852567125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bc_Buffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7292,7 +7296,7 @@ GameObject:
   - component: {fileID: 3922992565850665995}
   - component: {fileID: 3922992565853533207}
   - component: {fileID: 3922992565852567127}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Metal Delantero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7376,7 +7380,7 @@ GameObject:
   - component: {fileID: 3922992565850665997}
   - component: {fileID: 3922992565853533673}
   - component: {fileID: 3922992565852567081}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: R_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7459,7 +7463,7 @@ GameObject:
   - component: {fileID: 3922992565850665999}
   - component: {fileID: 3922992565853533675}
   - component: {fileID: 3922992565852567083}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: R_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7543,7 +7547,7 @@ GameObject:
   - component: {fileID: 3922992565850666001}
   - component: {fileID: 3922992565853533689}
   - component: {fileID: 3922992565852567097}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7625,7 +7629,7 @@ GameObject:
   - component: {fileID: 3922992565850666003}
   - component: {fileID: 3922992565853533691}
   - component: {fileID: 3922992565852567099}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7708,7 +7712,7 @@ GameObject:
   - component: {fileID: 3922992565850666005}
   - component: {fileID: 3922992565853533693}
   - component: {fileID: 3922992565852567101}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7789,7 +7793,7 @@ GameObject:
   - component: {fileID: 3922992565850666007}
   - component: {fileID: 3922992565853533695}
   - component: {fileID: 3922992565852567103}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_Fr_Rt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7871,7 +7875,7 @@ GameObject:
   - component: {fileID: 3922992565850666009}
   - component: {fileID: 3922992565853533669}
   - component: {fileID: 3922992565852567077}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7952,7 +7956,7 @@ GameObject:
   - component: {fileID: 3922992565850666011}
   - component: {fileID: 3922992565853533671}
   - component: {fileID: 3922992565852567079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheel_bc_Rt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8032,7 +8036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5005503658177990304}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8067,7 +8071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9215355109328397322}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ligths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8104,7 +8108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184320529617686155}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Luces_bc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8136,7 +8140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5615506718806187733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Safe_Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8168,7 +8172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3083142757902645446}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8202,7 +8206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6717813022421256797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8235,7 +8239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298449674472044802}
   - component: {fileID: 8298449674472044829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front_Right_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8295,7 +8299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8298449674986399306}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheels_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8330,7 +8334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298449675323472112}
   - component: {fileID: 8298449675323472115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front_Left_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8390,7 +8394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8298449675653271499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wheels_Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8425,7 +8429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298449675810420894}
   - component: {fileID: 8298449675810420889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Real_Left_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8486,7 +8490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298449676095742241}
   - component: {fileID: 8298449676095742240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Real_Right_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

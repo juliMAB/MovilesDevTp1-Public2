@@ -5,7 +5,6 @@ public class AreaDescarga : MonoBehaviour
     [SerializeField] private bool inUse = false;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger");
         Idownloadable idownloadable = other.gameObject.GetComponent<Idownloadable>();
         if (idownloadable != null && inUse == false)
         {

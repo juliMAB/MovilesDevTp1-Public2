@@ -11,7 +11,6 @@ public class TrackChekpoint : MonoBehaviour
         Taxi2 taxi = other.GetComponent<Taxi2>();
         if (taxi!=null)
         {
-            Debug.Log("Taxi intro");
             taxi.SetDestination(Next.transform.position);
         }
     }
