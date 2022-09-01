@@ -30,7 +30,12 @@ SpriteAtlas:
       enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables: []
+    packables:
+    - {fileID: 2800000, guid: b08bed494f9ce0a4a88412c0890f7416, type: 3}
+    - {fileID: 2800000, guid: 6ba8065e9ea6e31499860228f7caafc1, type: 3}
+    - {fileID: 2800000, guid: 9b1f12eb469427347bb4b3d0ac4cd7df, type: 3}
+    - {fileID: 2800000, guid: 0b266f611aec8ae4eb688d99fa20095a, type: 3}
+    - {fileID: 2800000, guid: 1fed4e2d61e745243818d44c26571a21, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
