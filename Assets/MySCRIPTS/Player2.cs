@@ -18,6 +18,12 @@ public class Player2 : MonoBehaviour, Idownloadable
     {
         respawnPoint = transform.position;
         mediator.Subscribe<DepositChangedCommand>(OutDeposit);
+        mediator.Subscribe<ScoreChangedCommand>(GetActualScoreTruck);
+    }
+
+    private void GetActualScoreTruck(ScoreChangedCommand c)
+    {
+        score = c.ScoreOnTruck;
     }
 
     private void OnTriggerEnter(Collider other)

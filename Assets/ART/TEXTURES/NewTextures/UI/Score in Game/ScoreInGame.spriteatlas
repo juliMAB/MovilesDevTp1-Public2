@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ScoreInGame
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a8fac8bd806f25e48a5bb1a409917617, type: 3}
+    - {fileID: 2800000, guid: 199c137dd8d75bc4f8c27827f02d1e1a, type: 3}
+    - {fileID: 2800000, guid: c57b4dee21dacdc4b840149d65a50d2d, type: 3}
+    - {fileID: 2800000, guid: c8218dfc6f295b549a43338b95a46207, type: 3}
+    - {fileID: 2800000, guid: 18291cd4e29d9c34d9be61940a4d35df, type: 3}
+    - {fileID: 2800000, guid: 43b47ea21177fe44fb41eeb12d4499ba, type: 3}
+    - {fileID: 2800000, guid: d90d44545d0620248a544f5ccdfb2310, type: 3}
+    - {fileID: 2800000, guid: 74431e206eebc984e9513761aee247e8, type: 3}
+    - {fileID: 2800000, guid: 2477d3f5a73069247ae53c56a2a58ab3, type: 3}
+    - {fileID: 2800000, guid: 8597a3b67643fbc4a98d7518587ae5e6, type: 3}
+    - {fileID: 2800000, guid: e97a2ba8d88e2344e8c7d0826601fa37, type: 3}
+    - {fileID: 2800000, guid: 3377540740d871c428246b5286a591ce, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
+  m_RenderDataMap: {}
+  m_Tag: ScoreInGame
+  m_IsVariant: 0

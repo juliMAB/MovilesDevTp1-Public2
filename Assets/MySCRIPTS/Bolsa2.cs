@@ -36,6 +36,6 @@ public class Bolsa2 : MonoBehaviour, Ipickapeable
         particleSystem.Play();
         visual.enabled = false;
         collider.enabled = false;
-		return value;
+		return 1;
     }
 }
