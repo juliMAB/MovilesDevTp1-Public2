@@ -41,8 +41,12 @@ public class BolsaMoveAnim : MonoBehaviour
     {
         this.OnEndDescarga = OnEndDescarga;
         this.OnEndDescarga += Restart;
-        mediator.Subscribe<ScoreChangedCommand>(GetScoreOnMediator);
-
+        if(mediator!=null)
+            mediator.Subscribe<ScoreChangedCommand>(GetScoreOnMediator);
+    }
+    public void AddToEndDescarga(ref Action addAction)
+    {
+        this.OnEndDescarga += addAction;
     }
 
     private void GetScoreOnMediator(ScoreChangedCommand c)
@@ -60,7 +64,8 @@ public class BolsaMoveAnim : MonoBehaviour
         currentBag = 0;
         bolsasDisponibles = 0;
         input = false;
-        bonusProgress.gameObject.SetActive(false);
+        if (bonusProgress!=null)
+            bonusProgress.gameObject.SetActive(false);
         if (BonusAnim != null)
         {
             BonusAnim = null;
@@ -93,7 +98,7 @@ public class BolsaMoveAnim : MonoBehaviour
                         BonusAnim = null;
                     }
                         
-                    if (BonusAnim == null)
+                    if (BonusAnim == null && bonusProgress != null)
                         BonusAnim = StartCoroutine(AnimMoveSlider(bonusTime));
                     
                 }
@@ -126,18 +131,23 @@ public class BolsaMoveAnim : MonoBehaviour
                 {
                     c.ScoreOnGlobal += bonusProgress.value * Bolsa2.GetValue();
                     c.ScoreOnTruck = 0;
-                    mediator.Publish(c);
+                    if (mediator != null)
+                        mediator.Publish(c);
                     if(BonusAnim!=null)
                         StopCoroutine(BonusAnim);
                     bonusProgress.gameObject.SetActive(false);
                 }
                 else
                 {
+                    if(mediator!=null)
                     c.ScoreOnGlobal = bonusProgress.value;
                 }
                 state = 0;
                 if (currentBag == bolsasDisponibles)
+                {
+                    input = false;
                     OnEndDescarga?.Invoke();
+                }
                 return;
         }
     }
@@ -188,8 +198,11 @@ public class BolsaMoveAnim : MonoBehaviour
             bonusProgress.value = bonusProgress.maxValue - (bonusProgress.maxValue / totaltime * time);
             yield return null;
         }
-        bonusProgress.value = 0;
-        BonusAnim = null;
-        bonusProgress.gameObject.SetActive(false);
+        if (bonusProgress!=null)
+        {
+            bonusProgress.value = 0;
+            BonusAnim = null;
+            bonusProgress.gameObject.SetActive(false);
+        }
     }
 }
