@@ -7,7 +7,7 @@ public class Obstacle2 : MonoBehaviour
     [SerializeField] bool inUse = false;
 
     [SerializeField] Rigidbody _rb = null;
-    [SerializeField] Collider _collider = null;
+    [SerializeField] BoxCollider _collider = null;
     void OnCollisionEnter(Collision coll)
     {
         
@@ -17,6 +17,7 @@ public class Obstacle2 : MonoBehaviour
         {
             _rb.useGravity = true;
             coll.rigidbody.velocity = Vector3.zero;
+            _collider.enabled = false;
             inUse = true;
             StartCoroutine(DestroyAfter(2));
         }
@@ -24,6 +25,10 @@ public class Obstacle2 : MonoBehaviour
 
     IEnumerator DestroyAfter(float time)
     {
+        while (true)
+        {
+
+        }
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
