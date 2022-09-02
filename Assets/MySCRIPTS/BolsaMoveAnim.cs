@@ -86,7 +86,6 @@ public class BolsaMoveAnim : MonoBehaviour
 
                         bonusProgress.gameObject.SetActive(true);
                         bonusProgress.value = bonusProgress.minValue;
-                        Debug.Log("sape");
                     }
                     if (BonusAnim != null)
                     {

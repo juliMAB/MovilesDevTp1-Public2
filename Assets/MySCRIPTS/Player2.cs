@@ -31,6 +31,8 @@ public class Player2 : MonoBehaviour, Idownloadable
         Ipickapeable ipickapeable = other.GetComponent<Ipickapeable>();
         if (ipickapeable!=null)
         {
+            if (bolsasAmount == 3)
+                return;
             score += ipickapeable.Catch();
             scoreChange.ScoreOnTruck = score;
             mediator.Publish(scoreChange);
@@ -56,6 +58,10 @@ public class Player2 : MonoBehaviour, Idownloadable
     private void Update()
     {
         if (transform.position.y<-10)
+        {
+            Respawn();
+        }
+        if (Vector3.Angle(transform.up, Vector3.up) > 80)
         {
             Respawn();
         }

@@ -94,13 +94,14 @@ public class CarController3 : MonoBehaviour
 
     void FixRotation()
     {
-        foreach (var wheel in _wheels)
-        {
-            if (!wheel.wheelCollider.isGrounded)
-            {
-                carRb.angularVelocity = Vector3.zero;
-            }
-
-        }
+        
+       // foreach (var wheel in _wheels)
+       // {
+       //     if (!wheel.wheelCollider.isGrounded)
+       //     {
+       //         carRb.angularVelocity = Vector3.Lerp(carRb.angularVelocity, Vector3.zero,0.1f);
+       //     }
+       //
+       // }
     }
 }
