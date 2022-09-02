@@ -62,7 +62,7 @@ MeshRenderer:
   - {fileID: -7926322549832557299, guid: 3d676841790aee04ba04f90627b8d2a3, type: 3}
   - {fileID: 6204807560122445501, guid: 3d676841790aee04ba04f90627b8d2a3, type: 3}
   - {fileID: -4820541742559877589, guid: 3d676841790aee04ba04f90627b8d2a3, type: 3}
-  - {fileID: -5361539746963470247, guid: 3d676841790aee04ba04f90627b8d2a3, type: 3}
+  - {fileID: 2100000, guid: fe31a6f03e0f0114d8b7cda833996c56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 9145336131125136938}
   - component: {fileID: 9145336131125136933}
   - component: {fileID: 9145336131125136932}
+  - component: {fileID: 194509868}
   m_Layer: 0
   m_Name: Taxi 1
   m_TagString: Untagged
@@ -693,6 +694,24 @@ MonoBehaviour:
   DestinationPoint: {x: -136.74393, y: -8.101636, z: -12.433638}
   _rb: {fileID: 9145336131125136938}
   speed: 10
+--- !u!114 &194509868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145336131125136935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1204d48fe71d0641886abf2e33fe691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMaskPlayer:
+    serializedVersion: 2
+    m_Bits: 8
+  inUse: 0
+  _rb: {fileID: 9145336131125136938}
+  _collider: {fileID: 9145336131125136933}
 --- !u!1 &9145336131722459682
 GameObject:
   m_ObjectHideFlags: 0
