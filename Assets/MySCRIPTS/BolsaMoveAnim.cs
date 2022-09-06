@@ -37,14 +37,15 @@ public class BolsaMoveAnim : MonoBehaviour
 
     private float localscore;
 
-    public void Init(ref Action OnEndDescarga, int bolsas)
+    public void Init( Action OnEndDescarga, int bolsas)
     {
+        
+        OnEndDescarga += Restart;
         this.OnEndDescarga = OnEndDescarga;
-        this.OnEndDescarga += Restart;
-        if(mediator!=null)
+        if (mediator!=null)
             mediator.Subscribe<ScoreChangedCommand>(GetScoreOnMediator);
     }
-    public void AddToEndDescarga(ref Action addAction)
+    public void AddToEndDescarga( Action addAction)
     {
         this.OnEndDescarga += addAction;
     }
@@ -146,6 +147,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 if (currentBag == bolsasDisponibles)
                 {
                     input = false;
+                    Debug.Log("OnEndDescarga");
                     OnEndDescarga?.Invoke();
                 }
                 return;

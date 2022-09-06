@@ -9,21 +9,21 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] bool playerCheck = false;
 
-    [SerializeField] Action<bool> OnEndInit = null;
+    [SerializeField] Action OnEndIntro = null;
 
-    public void Init(ref Action endIntro)
+    [SerializeField] Action OnChangeBolsa = null;
+
+    public void Init( Action OnEndIntro)
     {
-        bolsaMove.Init( ref endIntro, 1);
+        this.OnEndIntro = OnEndIntro;
+        OnChangeBolsa += isChangeEnd; 
+        bolsaMove.Init( OnChangeBolsa, 1);
     }
 
-    private void CallEndInit()
-    {
-        OnEndInit
-    }
 
     public bool EndInit()
     {
-        if (MyGameManager.TwoPlayers)
+        if (MyGameplayManager.TwoPlayers)
             if (playerCheck == false) 
                 playerCheck = true; 
             else
@@ -33,9 +33,10 @@ public class IntroManager : MonoBehaviour
         return false;
     }
 
-    private void UpdateThis()
+    private void isChangeEnd()
     {
-        OnEndInit = EndInit();
+        Debug.Log("isChangeEnd");
+        if (EndInit())
+            OnEndIntro?.Invoke();
     }
-
 }

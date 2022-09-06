@@ -22,7 +22,7 @@ public class ManagerDescarga : MonoBehaviour
 
        mediator.Subscribe<DepositChangedCommand>(InitDeposit);
         
-        animatorMoveAnim.Init(ref OnEndDeposit,bolsas);
+        animatorMoveAnim.Init( OnEndDeposit,bolsas);
     }
 
    private void InitDeposit(DepositChangedCommand c)
