@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 {
+    [SerializeField] bool b_twoPlayers = false;
+
     private static bool twoPlayers = false;
 
     [SerializeField] IntroManager intro;
@@ -17,6 +19,11 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     public static bool TwoPlayers { get => twoPlayers; set => twoPlayers = value; }
 
+    private void OnValidate()
+    {
+        twoPlayers = b_twoPlayers; 
+    }
+
 
     public void Start()
     {
@@ -26,7 +33,6 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     private void TestCall()
     {
-        Debug.Log("TestCall");
         //prenderGame
         go_game.SetActive(true);
         //apagarIntro;

@@ -147,7 +147,6 @@ public class BolsaMoveAnim : MonoBehaviour
                 if (currentBag == bolsasDisponibles)
                 {
                     input = false;
-                    Debug.Log("OnEndDescarga");
                     OnEndDescarga?.Invoke();
                 }
                 return;

@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
-    [SerializeField] BolsaMoveAnim bolsaMove;
+    [SerializeField] BolsaMoveAnim bolsaMove = null;
+
+    [SerializeField] Animator introInstructivoAnim = null;
 
     [SerializeField] bool playerCheck = false;
 
@@ -13,11 +15,16 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] Action OnChangeBolsa = null;
 
+    [SerializeField] bool input = true;
+
+    [SerializeField] bool firstInstructivo = true;
+
     public void Init( Action OnEndIntro)
     {
         this.OnEndIntro = OnEndIntro;
         OnChangeBolsa += isChangeEnd; 
         bolsaMove.Init( OnChangeBolsa, 1);
+        introInstructivoAnim.Play("InstrucvitoInit");
     }
 
 
@@ -35,8 +42,23 @@ public class IntroManager : MonoBehaviour
 
     private void isChangeEnd()
     {
-        Debug.Log("isChangeEnd");
         if (EndInit())
             OnEndIntro?.Invoke();
+    }
+
+    private void Update()
+    {
+        InputW();
+    }
+
+    private void InputW()
+    {
+        if (!firstInstructivo)
+            return;
+        if (Input.GetKey(KeyCode.W))
+        {
+            firstInstructivo = false;
+            introInstructivoAnim.Play("InstructivoIddle");
+        }
     }
 }
