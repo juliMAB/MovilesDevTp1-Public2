@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour, Idownloadable
 {
-    [SerializeField] private float score;
-    ScoreChangedCommand scoreChange = new ScoreChangedCommand();
-    DepositChangedCommand depositChange = new DepositChangedCommand();
-    [SerializeField] private Camera camera;
+    private ScoreChangedCommand scoreChange = new ScoreChangedCommand();
+    private DepositChangedCommand depositChange = new DepositChangedCommand();
+    private SceneChangedCommand sceneChanged = new SceneChangedCommand();
 
     [SerializeField] private Mediator mediator;
 
-    [SerializeField] private Vector3 respawnPoint;
+    
     [SerializeField] private Rigidbody rb;
 
     [SerializeField] private int bolsasAmount = 0;
 
     private void Start()
     {
-        respawnPoint = transform.position;
+        
         mediator.Subscribe<DepositChangedCommand>(OutDeposit);
         mediator.Subscribe<ScoreChangedCommand>(GetActualScoreTruck);
     }
 
     private void GetActualScoreTruck(ScoreChangedCommand c)
     {
-        score = c.ScoreOnTruck;
+        scoreChange.ScoreOnTruck = c.ScoreOnTruck;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,37 +32,10 @@ public class Player2 : MonoBehaviour, Idownloadable
         {
             if (bolsasAmount == 3)
                 return;
-            score += ipickapeable.Catch();
-            scoreChange.ScoreOnTruck = score;
+            scoreChange.ScoreOnTruck += ipickapeable.Catch();
             mediator.Publish(scoreChange);
             bolsasAmount++;
             return;
-        }
-        Irespawneable irespawneable = other.GetComponent<Irespawneable>();
-        if (irespawneable!=null)
-        {
-            respawnPoint = irespawneable.GetRespawnPoint();
-        }
-    }
-
-
-    private void Respawn()
-    {
-        transform.position = respawnPoint;
-        transform.rotation = Quaternion.identity;
-        rb.velocity        = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-    }
-
-    private void Update()
-    {
-        if (transform.position.y<-10)
-        {
-            Respawn();
-        }
-        if (Vector3.Angle(transform.up, Vector3.up) > 80)
-        {
-            Respawn();
         }
     }
 
@@ -86,7 +58,8 @@ public class Player2 : MonoBehaviour, Idownloadable
         depositChange.BagsCuantity = bolsasAmount;
         depositChange.OnDeposit = true;
         mediator.Publish(depositChange);
-        camera.gameObject.SetActive(false);
+        sceneChanged.OnGoIndex = 2;
+        mediator.Publish(sceneChanged);
     }
 
     private void OutDeposit(DepositChangedCommand c)
@@ -95,7 +68,8 @@ public class Player2 : MonoBehaviour, Idownloadable
             return;
         depositChange.OnDeposit = false;
         bolsasAmount = 0;
-        camera.gameObject.SetActive(true);
+        sceneChanged.OnGoIndex = 1;
+        mediator.Publish(sceneChanged);
         StartCar();
     }
 }

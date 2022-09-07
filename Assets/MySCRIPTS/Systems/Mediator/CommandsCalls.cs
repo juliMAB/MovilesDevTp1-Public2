@@ -26,15 +26,14 @@ class DepositChangedCommand : ICommand
     }
 }
 
-class CameraChangedCommand : ICommand
+class SceneChangedCommand : ICommand
 {
-    public int OnGoIndex //0=intro,1=Game,2=Deposit
+    /// <summary>
+    /// 0=intro,1=Game,2=Deposit
+    /// </summary>
+    public int OnGoIndex
     {
         get;
         set;
     }
-}
-class CanvasChangedCommand : ICommand
-{
-
 }
