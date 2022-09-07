@@ -25,3 +25,16 @@ class DepositChangedCommand : ICommand
         set;
     }
 }
+
+class CameraChangedCommand : ICommand
+{
+    public int OnGoIndex //0=intro,1=Game,2=Deposit
+    {
+        get;
+        set;
+    }
+}
+class CanvasChangedCommand : ICommand
+{
+
+}

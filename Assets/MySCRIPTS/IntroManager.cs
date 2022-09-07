@@ -9,7 +9,7 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] Animator introInstructivoAnim = null;
 
-    [SerializeField] bool playerCheck = false;
+    [SerializeField] static bool playerCheck = false;
 
     [SerializeField] Action OnEndIntro = null;
 

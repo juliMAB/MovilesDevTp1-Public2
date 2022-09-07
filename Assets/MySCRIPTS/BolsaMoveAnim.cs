@@ -35,8 +35,6 @@ public class BolsaMoveAnim : MonoBehaviour
 
     private ScoreChangedCommand c = new ScoreChangedCommand();
 
-    private float localscore;
-
     public void Init( Action OnEndDescarga, int bolsas)
     {
         

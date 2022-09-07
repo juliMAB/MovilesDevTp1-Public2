@@ -14,7 +14,11 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : Component
         if (instance == null)
         {
             instance = this as T;
-            if (dontDestroyOnLoad) DontDestroyOnLoad(this);
+            if (dontDestroyOnLoad)
+            {
+                transform.parent = null;
+                DontDestroyOnLoad(this);
+            }
         }
         else
         {
