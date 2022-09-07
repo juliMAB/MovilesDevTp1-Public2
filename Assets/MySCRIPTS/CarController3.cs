@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CarController3 : MonoBehaviour
 {
+
+    #region STRUCTURES
     public enum Axie
     {
         Front,
@@ -12,12 +14,15 @@ public class CarController3 : MonoBehaviour
     }
 
     [Serializable]
-    public struct Wheel
+    private struct Wheel
     {
         public GameObject wheelModel;
         public WheelCollider wheelCollider;
         public Axie axie;
     }
+    #endregion
+
+    #region EXPOSED_FIELDS
 
     [SerializeField] private float forceAcceleration = 600.0f;
 
@@ -27,30 +32,34 @@ public class CarController3 : MonoBehaviour
 
     [SerializeField] private List<Wheel> _wheels;
 
+    #endregion
+
+    #region PRIVATE_FIELDS
     private float moveInput;
     private float steerInput;
     private Rigidbody carRb;
+    #endregion
 
+    #region UNITY_CALLS
     private void Start()
     {
-        carRb = GetComponent<Rigidbody>();
+        if (carRb == null)
+            carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = Vector3.zero;
     }
-
-
     private void Update()
     {
         GetInput();
         AnimationWheel();
     }
-
-
     private void FixedUpdate()
     {
         Move();
         Steer();
-        FixRotation();
     }
+    #endregion
+
+    #region PRIVATE_METHODS
     private void GetInput()
     {
         if (!inputEnabled)
@@ -80,7 +89,7 @@ public class CarController3 : MonoBehaviour
         }
     }
 
-    void AnimationWheel()
+    private void AnimationWheel()
     {
         foreach (var wheel in _wheels)
         {
@@ -92,16 +101,5 @@ public class CarController3 : MonoBehaviour
         }
     }
 
-    void FixRotation()
-    {
-        
-       // foreach (var wheel in _wheels)
-       // {
-       //     if (!wheel.wheelCollider.isGrounded)
-       //     {
-       //         carRb.angularVelocity = Vector3.Lerp(carRb.angularVelocity, Vector3.zero,0.1f);
-       //     }
-       //
-       // }
-    }
+    #endregion
 }
