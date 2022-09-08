@@ -1,7 +1,7 @@
 
 class ScoreChangedCommand : ICommand
 {
-    public float ScoreOnTruck
+    public int BagsOnTruck
     {
         get;
         set;
@@ -12,19 +12,6 @@ class ScoreChangedCommand : ICommand
         set;
     } 
 }
-class DepositChangedCommand : ICommand
-{
-    public int BagsCuantity
-    {
-        get;
-        set;
-    }
-    public bool OnDeposit
-    {
-        get;
-        set;
-    }
-}
 
 class SceneChangedCommand : ICommand
 {
@@ -32,6 +19,14 @@ class SceneChangedCommand : ICommand
     /// 0=intro,1=Game,2=Deposit
     /// </summary>
     public int OnGoIndex
+    {
+        get;
+        set;
+    }
+    /// <summary>
+    /// 0=one,1=two,2=both
+    /// </summary>
+    public int pjIndex
     {
         get;
         set;

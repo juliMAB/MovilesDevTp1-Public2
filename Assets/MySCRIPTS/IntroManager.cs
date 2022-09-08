@@ -28,7 +28,7 @@ public class IntroManager : MonoBehaviour
     }
 
 
-    public bool EndInit()
+    private bool EndInit()
     {
         if (MyGameplayManager.TwoPlayers)
             if (playerCheck == false) 

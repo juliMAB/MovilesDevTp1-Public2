@@ -24,10 +24,10 @@ public class CanvasGameManager : MonoBehaviour
 
     void ScoreChangeUI(ScoreChangedCommand c)
     {
-        text.text = "Truck: " + c.ScoreOnTruck.ToString();
+        text.text = "Truck: " + c.BagsOnTruck.ToString();
         text2.text = "Total: " + c.ScoreOnGlobal.ToString();
 
-        switch (c.ScoreOnTruck)
+        switch (c.BagsOnTruck)
         {
             case 0: { ImagenTop.sprite = TopTruckSprite[0]; if (currentCorrutine != null) StopCoroutine(currentCorrutine); return; }
             case 1: { ImagenTop.sprite = TopTruckSprite[1]; return; }

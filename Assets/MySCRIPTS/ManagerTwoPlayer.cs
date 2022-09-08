@@ -3,106 +3,147 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.SearchService;
 using UnityEngine;
+    public enum GameState
+    {
+        Intro,
+        Game, 
+        Camion=1,
+        Deposit,
+        Ninguno
+    }
+    public enum PjIndex
+    {
+        pj1,
+        pj2
+    }
 
 public class ManagerTwoPlayer : MonoBehaviour
 {
+
+    //SceneChangedCommand _sceneChanged;
+
     [SerializeField] Mediator[] mediator = null;
 
     [Serializable]
-    struct Player
+    struct PlayerData
     {
         public Camera[] cameras;
-
+        [Header("init,camion,deposit")]
         public GameObject[] assets; //camion,deposito,init;
 
         public GameObject[] canvas;
     }
     [SerializeField] GameObject[] canvas1Player;
 
-    [SerializeField] Player[] playerData = null;
+    [SerializeField] PlayerData[] playerData = null;
 
-    public void Init()
+    public void Init(ref Action OnEndIntro)
     {
+        IntroToIntro();
         if (MyGameplayManager.TwoPlayers)
         {
-            for (int i = 0; i < playerData[0].cameras.Length; i++)
-            {
-                playerData[0].cameras[i].rect = new Rect(new Vector2(0, 0)   , new Vector2(0.5f, 1.0f));
-                playerData[1].cameras[i].rect = new Rect(new Vector2(0.5f, 0), new Vector2(0.5f, 1.0f));
-            }
+            mediator[(int)PjIndex.pj1].Subscribe<SceneChangedCommand>(ChangeScene);
+            mediator[(int)PjIndex.pj2].Subscribe<SceneChangedCommand>(ChangeScene);
         }
         else
         {
-            for (int i = 0; i < playerData[1].cameras.Length; i++)
-                playerData[1].cameras[i].enabled = false;
-            for (int i = 0; i < playerData[1].assets.Length; i++)
-                playerData[1].assets[i].SetActive(false);
-            for (int i = 0; i < playerData[1].canvas.Length; i++)
-                playerData[1].canvas[i].SetActive(false);
+            mediator[(int)PjIndex.pj1].Subscribe<SceneChangedCommand>(ChangeSceneOnePlayer);
+            mediator[(int)PjIndex.pj2].gameObject.SetActive(false);
+        }
+        OnEndIntro += IntroToGame;
+    }
+
+    private void IntroToIntro()
+    {
+        if (MyGameplayManager.TwoPlayers)
+        {
+            for (int i = 0; i < playerData[(int)PjIndex.pj1].cameras.Length; i++)
+            {
+                playerData[(int)PjIndex.pj1].cameras[i].rect = new Rect(new Vector2(0, 0), new Vector2(0.5f, 1.0f));
+                playerData[(int)PjIndex.pj2].cameras[i].rect = new Rect(new Vector2(0.5f, 0), new Vector2(0.5f, 1.0f));
+            }
+            SetAssetsOn(PjIndex.pj2, GameState.Intro);
+        }
+        else
+        {
+            SetCameraOn(PjIndex.pj2, GameState.Ninguno);
+            SetAssetsAllOff(PjIndex.pj2);
+            SetCanvasOn(PjIndex.pj2, GameState.Ninguno);
         }
     }
 
-    public void IntroToGame()
+    private void IntroToGame()
     {
         if (MyGameplayManager.TwoPlayers)
         {
-            for (int i = 0; i < playerData[0].cameras.Length; i++)
+            for (int i = 0; i < 2; i++)
             {
-                playerData[0].cameras[i].rect = new Rect(new Vector2(0, 0), new Vector2(0.5f, 1.0f));
-                playerData[1].cameras[i].rect = new Rect(new Vector2(0.5f, 0), new Vector2(0.5f, 1.0f));
+                SetCameraOn((PjIndex)i, GameState.Camion);
+                SetAssetsOn((PjIndex)i, GameState.Camion);
+                SetAssetsOn((PjIndex)i, GameState.Deposit);
+                SetCanvasOn((PjIndex)i, GameState.Game);
             }
-            for (int i = 0; i < playerData[1].assets.Length; i++)
-                playerData[1].assets[i].SetActive(true);
         }
         else
         {
-            for (int i = 0; i < playerData[1].cameras.Length; i++)
-                playerData[1].cameras[i].enabled = false;
-            for (int i = 0; i < playerData[1].assets.Length; i++)
-                playerData[1].assets[i].SetActive(false);
-            for (int i = 0; i < playerData[1].canvas.Length; i++)
-                playerData[1].canvas[i].SetActive(false);
+            SetCanvasOneOn(GameState.Game);
         }
     }
 
-    public void OldExample()
+    private void ChangeSceneOnePlayer(SceneChangedCommand c)
     {
-        if (MyGameplayManager.TwoPlayers)
+        SetCanvasOneOn((GameState)c.OnGoIndex);
+        SetCameraOn((PjIndex)c.pjIndex, (GameState)c.OnGoIndex);
+    }
+
+    private void ChangeScene(SceneChangedCommand c)
+    {
+        SetCameraOn((PjIndex)c.pjIndex, (GameState)c.OnGoIndex);
+        SetCanvasOn((PjIndex)c.pjIndex, (GameState)c.OnGoIndex);
+    }
+
+    private void SetCameraOn(PjIndex ix,GameState s)
+    {
+        for (int i = 0; i < playerData[(int)ix].cameras.Length; i++)
         {
-            for (int i = 0; i < playerData[0].cameras.Length; i++)
-            {
-                playerData[0].cameras[i].rect = new Rect(new Vector2(0, 0), new Vector2(0.5f, 1.0f));
-                playerData[1].cameras[i].rect = new Rect(new Vector2(0.5f, 0), new Vector2(0.5f, 1.0f));
-            }
-            for (int i = 0; i < playerData[1].assets.Length; i++)
-                playerData[1].assets[i].SetActive(true);
-            for (int i = 0; i < playerData[0].canvas.Length; i++)
-            {
-                playerData[0].canvas[i].SetActive(true);
-                playerData[1].canvas[i].SetActive(true);
-            }
-            for (int i = 0; i < canvas1Player.Length; i++)
-            {
-                canvas1Player[i].SetActive(false);
-            }
+            playerData[(int)ix].cameras[i].enabled = false;
+            if (i == (int)s)
+                playerData[(int)ix].cameras[i].enabled = true;
         }
-        else
+    }
+    private void SetCanvasOn(PjIndex ix, GameState s)
+    {
+        for (int i = 0; i < playerData[(int)ix].canvas.Length; i++)
         {
-            for (int i = 0; i < playerData[1].cameras.Length; i++)
-                playerData[1].cameras[i].enabled = false;
-            for (int i = 0; i < playerData[1].assets.Length; i++)
-                playerData[1].assets[i].SetActive(false);
-            for (int i = 0; i < playerData[1].canvas.Length; i++)
-            {
-                playerData[0].canvas[i].SetActive(false);
-                playerData[1].canvas[i].SetActive(false);
-            }
-            for (int i = 0; i < canvas1Player.Length; i++)
-            {
+            playerData[(int)ix].canvas[i].SetActive(false);
+            if (i == (int)s)
+                playerData[(int)ix].canvas[i].SetActive(true);
+        }
+    }
+    private void SetAssetsOn(PjIndex ix, GameState s)
+    {
+        playerData[(int)ix].assets[(int)s].SetActive(true);
+    }
+    private void SetAssetsOff(PjIndex ix, GameState s)
+    {
+        playerData[(int)ix].assets[(int)s].SetActive(false);
+    }
+    private void SetAssetsAllOff(PjIndex ix)
+    {
+        for (int i = 0; i < playerData[(int)ix].assets.Length; i++)
+        {
+            playerData[(int)ix].assets[i].SetActive(false);
+        }
+    }
+    private void SetCanvasOneOn(GameState s)
+    {
+        for (int i = 0; i < canvas1Player.Length; i++)
+        {
+            canvas1Player[i].SetActive(false);
+            if (i == (int)s)
                 canvas1Player[i].SetActive(true);
-            }
         }
     }
-
 }

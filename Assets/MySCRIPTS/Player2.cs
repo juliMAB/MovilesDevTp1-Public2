@@ -2,49 +2,58 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour, Idownloadable
 {
-    private ScoreChangedCommand scoreChange = new ScoreChangedCommand();
-    private DepositChangedCommand depositChange = new DepositChangedCommand();
-    private SceneChangedCommand sceneChanged = new SceneChangedCommand();
-
+    #region EXPOSED_FIELD
     [SerializeField] private Mediator mediator;
 
+    [SerializeField] private PjIndex id;
+    #endregion
+
+    #region PRIVATE_FIELD
+    private ScoreChangedCommand scoreChange = new ScoreChangedCommand();
+    private SceneChangedCommand sceneChanged = new SceneChangedCommand();
     
-    [SerializeField] private Rigidbody rb;
+    private Rigidbody rb;
+    #endregion
 
-    [SerializeField] private int bolsasAmount = 0;
-
+    #region UNITY_CALLS
     private void Start()
     {
-        
-        mediator.Subscribe<DepositChangedCommand>(OutDeposit);
-        mediator.Subscribe<ScoreChangedCommand>(GetActualScoreTruck);
-    }
+        rb = GetComponent<Rigidbody>();
 
-    private void GetActualScoreTruck(ScoreChangedCommand c)
-    {
-        scoreChange.ScoreOnTruck = c.ScoreOnTruck;
+        mediator.Subscribe<SceneChangedCommand>(OutDeposit);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         Ipickapeable ipickapeable = other.GetComponent<Ipickapeable>();
         if (ipickapeable!=null)
         {
-            if (bolsasAmount == 3)
+            if (scoreChange.BagsOnTruck == 3)
                 return;
-            scoreChange.ScoreOnTruck += ipickapeable.Catch();
+            scoreChange.BagsOnTruck += ipickapeable.Catch();
             mediator.Publish(scoreChange);
-            bolsasAmount++;
+            scoreChange.BagsOnTruck++;
             return;
         }
     }
+    #endregion
+
+    #region PUBLIC_METHODS
 
     public bool HasBags()
     {
-        return bolsasAmount>0;
+        return scoreChange.BagsOnTruck > 0;
     }
+    public void IntroDeposit()
+    {
+        StopCar();
+        sceneChanged.OnGoIndex = (int)GameState.Deposit;
+        sceneChanged.pjIndex = (int)id;
+        mediator.Publish(sceneChanged);
+    }
+    #endregion
 
-    public void StopCar()
+    #region PRIVATE_METHODS
+    private void StopCar()
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }
@@ -53,23 +62,12 @@ public class Player2 : MonoBehaviour, Idownloadable
         rb.constraints = RigidbodyConstraints.None;
     }
 
-    public void IntroDeposit()
+    private void OutDeposit(SceneChangedCommand c)
     {
-        depositChange.BagsCuantity = bolsasAmount;
-        depositChange.OnDeposit = true;
-        mediator.Publish(depositChange);
-        sceneChanged.OnGoIndex = 2;
-        mediator.Publish(sceneChanged);
-    }
-
-    private void OutDeposit(DepositChangedCommand c)
-    {
-        if (c.OnDeposit)
+        if (c.OnGoIndex != (int)GameState.Game)
             return;
-        depositChange.OnDeposit = false;
-        bolsasAmount = 0;
-        sceneChanged.OnGoIndex = 1;
-        mediator.Publish(sceneChanged);
         StartCar();
     }
+    #endregion
+
 }

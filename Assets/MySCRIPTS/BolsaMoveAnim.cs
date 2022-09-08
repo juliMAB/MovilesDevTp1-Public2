@@ -128,8 +128,8 @@ public class BolsaMoveAnim : MonoBehaviour
                 currentBag++;
                 if (bonusProgress != null && bonusProgress.enabled)
                 {
-                    c.ScoreOnGlobal += bonusProgress.value * Bolsa2.GetValue();
-                    c.ScoreOnTruck = 0;
+                    c.ScoreOnGlobal += bonusProgress.value * MyGameplayManager.BagValue;
+                    c.BagsOnTruck = 0;
                     if (mediator != null)
                         mediator.Publish(c);
                     if(BonusAnim!=null)

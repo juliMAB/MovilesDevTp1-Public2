@@ -1,7 +1,7 @@
 
 public interface Ipickapeable
 {
-    float Catch();
+    int Catch();
 }
 
 public interface Irespawneable
@@ -12,8 +12,6 @@ public interface Irespawneable
 public interface Idownloadable 
 {
     bool HasBags();
-
-    void StopCar();
 
     void IntroDeposit();
 

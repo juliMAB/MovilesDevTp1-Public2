@@ -9,14 +9,4 @@ public class GamePlayManager : MonoBehaviour
 
     [SerializeField] Action OnEndIntro;
 
-    private void Start()
-    {
-        
-    }
-
-
-
-
-    //private void 
-
 }

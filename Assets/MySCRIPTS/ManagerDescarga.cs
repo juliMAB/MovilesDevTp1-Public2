@@ -1,38 +1,49 @@
 using System;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ManagerDescarga : MonoBehaviour
 {
+
     [SerializeField] Animator animator;
     [SerializeField] Animator instructivo;
     [SerializeField] Canvas canvas;
     [SerializeField] BolsaMoveAnim animatorMoveAnim;
     [SerializeField] private Camera camera;
-    DepositChangedCommand depositChange = new DepositChangedCommand();
     [SerializeField] private Mediator mediator;
 
     [SerializeField] private int bolsas;
 
+
+
+    private SceneChangedCommand sceneChangedCommand = new SceneChangedCommand();
+    private int bagCuantity;
     private Action OnEndDeposit;
 
     private void Start()
     {
         OnEndDeposit += EndDeposit;
 
-       mediator.Subscribe<DepositChangedCommand>(InitDeposit);
+       mediator.Subscribe<SceneChangedCommand>(InitDeposit);
+
+        mediator.Subscribe<ScoreChangedCommand>(UpdateBagCuantityOnDeposit);
         
         animatorMoveAnim.Init( OnEndDeposit,bolsas);
     }
 
-   private void InitDeposit(DepositChangedCommand c)
-   {
-       if (!c.OnDeposit)
+    private void UpdateBagCuantityOnDeposit(ScoreChangedCommand c)
+    {
+        bagCuantity = c.BagsOnTruck;
+    }
+    private void InitDeposit(SceneChangedCommand c)
+    {
+        if (!(c.OnGoIndex==(int)GameState.Deposit))
            return;
-       camera.gameObject.SetActive(true);
+        sceneChangedCommand.pjIndex = c.pjIndex;
        animator.enabled = true;
        animator.Play("StartDeposit");
-       animatorMoveAnim.MyStart(c.BagsCuantity);
+       animatorMoveAnim.MyStart(bagCuantity);
        canvas.gameObject.SetActive(true);
    }
     private void EndDeposit()
@@ -44,11 +55,8 @@ public class ManagerDescarga : MonoBehaviour
     }
     private void LasCallEndDeposit()
     {
-        camera.gameObject.SetActive(false);
         animator.enabled = false;
-        depositChange.OnDeposit = false;
-        mediator.Publish(depositChange);
-        canvas.gameObject.SetActive(false);
-
+        sceneChangedCommand.OnGoIndex = (int)GameState.Game;
+        mediator.Publish(sceneChangedCommand);
     }
 }

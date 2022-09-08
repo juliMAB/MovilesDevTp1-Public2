@@ -8,17 +8,6 @@ public class Bolsa2 : MonoBehaviour, Ipickapeable
 	[SerializeField] private ParticleSystem particleSystem;
 	[SerializeField] private MeshRenderer visual;
 	[SerializeField] private Collider collider;
-	[SerializeField] private float valuE;
-	[SerializeField] static private float value;
-
-	private void OnValidate()
-	{
-		value = valuE;
-	}
-	static public float GetValue()
-	{
-		return value;
-	}
 
 	private void Start()
     {
@@ -31,11 +20,15 @@ public class Bolsa2 : MonoBehaviour, Ipickapeable
 		gameObject.SetActive(false);
 	}
 
-	float Ipickapeable.Catch()
+	int Ipickapeable.Catch()
+	{
+		StartDie();
+        return 1;
+    }
+	private void StartDie()
 	{
         particleSystem.Play();
         visual.enabled = false;
         collider.enabled = false;
-		return 1;
-    }
+	}
 }

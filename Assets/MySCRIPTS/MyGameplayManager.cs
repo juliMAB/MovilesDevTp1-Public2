@@ -19,7 +19,10 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     [SerializeField] ManagerTwoPlayer ManagerTwo;
 
+    private static int bagValue = 1;
+
     public static bool TwoPlayers { get => twoPlayers; set => twoPlayers = value; }
+    public static int BagValue { get => bagValue; set => bagValue = value; }
 
     private void OnValidate()
     {
@@ -33,21 +36,15 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
         intro[0].Init(OnEndIntro);
         if(twoPlayers)
         {
-           ManagerTwo.Init();
+           ManagerTwo.Init(ref OnEndIntro);
            intro[1].Init(OnEndIntro);
         }
         go_game.SetActive(false);
     }
 
-    private void TestCall()
-    {
-        //prenderGame
-        go_game.SetActive(true);
-        //apagarIntro;
-        go_intro[0].SetActive(false);
-        if(twoPlayers)
-        {
-            go_intro[1].SetActive(false);
-        }
-    }
+   private void TestCall()
+   {
+       //prenderGame
+       go_game.SetActive(true);
+   }
 }
