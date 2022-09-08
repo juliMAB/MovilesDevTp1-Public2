@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class Bolsa2 : MonoBehaviour, Ipickapeable
 {
-
-	[SerializeField] private ParticleSystem particleSystem;
+    #region EXPOSED_FIELD
+    [SerializeField] private ParticleSystem particleSystem;
 	[SerializeField] private MeshRenderer visual;
 	[SerializeField] private Collider collider;
+    #endregion
 
-	private void Start()
+    #region UNITY_CALLS
+    private void Start()
     {
 		var main = particleSystem.main;
 		main.stopAction = ParticleSystemStopAction.Callback;
 	}
-
 	private void OnParticleSystemStopped()
 	{
 		gameObject.SetActive(false);
 	}
+    #endregion
 
-	int Ipickapeable.Catch()
+    #region INTERFACE_METHODS
+    int Ipickapeable.Catch()
 	{
 		StartDie();
         return 1;
     }
-	private void StartDie()
+    #endregion
+
+    #region PRIVATE_METHODS
+    private void StartDie()
 	{
         particleSystem.Play();
         visual.enabled = false;
         collider.enabled = false;
 	}
+    #endregion
 }
