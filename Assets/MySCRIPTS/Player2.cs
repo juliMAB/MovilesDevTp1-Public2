@@ -31,7 +31,6 @@ public class Player2 : MonoBehaviour, Idownloadable
                 return;
             scoreChange.BagsOnTruck += ipickapeable.Catch();
             mediator.Publish(scoreChange);
-            scoreChange.BagsOnTruck++;
             return;
         }
     }

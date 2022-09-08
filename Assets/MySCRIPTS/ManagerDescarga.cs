@@ -8,9 +8,7 @@ public class ManagerDescarga : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] Animator instructivo;
-    [SerializeField] Canvas canvas;
     [SerializeField] BolsaMoveAnim animatorMoveAnim;
-    [SerializeField] private Camera camera;
     [SerializeField] private Mediator mediator;
 
     [SerializeField] private int bolsas;
@@ -29,7 +27,7 @@ public class ManagerDescarga : MonoBehaviour
 
         mediator.Subscribe<ScoreChangedCommand>(UpdateBagCuantityOnDeposit);
         
-        animatorMoveAnim.Init( OnEndDeposit,bolsas);
+        animatorMoveAnim.Init(OnEndDeposit);
     }
 
     private void UpdateBagCuantityOnDeposit(ScoreChangedCommand c)
@@ -40,11 +38,10 @@ public class ManagerDescarga : MonoBehaviour
     {
         if (!(c.OnGoIndex==(int)GameState.Deposit))
            return;
-        sceneChangedCommand.pjIndex = c.pjIndex;
+       sceneChangedCommand.pjIndex = c.pjIndex;
        animator.enabled = true;
        animator.Play("StartDeposit");
        animatorMoveAnim.MyStart(bagCuantity);
-       canvas.gameObject.SetActive(true);
    }
     private void EndDeposit()
     {

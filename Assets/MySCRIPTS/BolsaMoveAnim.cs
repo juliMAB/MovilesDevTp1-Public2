@@ -1,11 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows.Speech;
 
 public class BolsaMoveAnim : MonoBehaviour
 {
@@ -33,9 +29,9 @@ public class BolsaMoveAnim : MonoBehaviour
     private float horizontalValue;
     private float VerticalValue;
 
-    private ScoreChangedCommand c = new ScoreChangedCommand();
+    private ScoreChangedCommand scoreChangerCommand = new ScoreChangedCommand();
 
-    public void Init( Action OnEndDescarga, int bolsas)
+    public void Init( Action OnEndDescarga)
     {
         
         OnEndDescarga += Restart;
@@ -50,7 +46,7 @@ public class BolsaMoveAnim : MonoBehaviour
 
     private void GetScoreOnMediator(ScoreChangedCommand c)
     {
-        this.c = c;
+        this.scoreChangerCommand = c;
     }
     public void MyStart(int bolsasCuantity)
     {
@@ -68,6 +64,11 @@ public class BolsaMoveAnim : MonoBehaviour
         if (BonusAnim != null)
         {
             BonusAnim = null;
+        }
+        if (mediator!=null)
+        {
+            scoreChangerCommand.BagsOnTruck = 0;
+            mediator.Publish(scoreChangerCommand);
         }
     }
     private void Update()
@@ -128,10 +129,10 @@ public class BolsaMoveAnim : MonoBehaviour
                 currentBag++;
                 if (bonusProgress != null && bonusProgress.enabled)
                 {
-                    c.ScoreOnGlobal += bonusProgress.value * MyGameplayManager.BagValue;
-                    c.BagsOnTruck = 0;
+                    scoreChangerCommand.ScoreOnGlobal += bonusProgress.value * MyGameplayManager.BagValue;
+                    scoreChangerCommand.BagsOnTruck = 0;
                     if (mediator != null)
-                        mediator.Publish(c);
+                        mediator.Publish(scoreChangerCommand);
                     if(BonusAnim!=null)
                         StopCoroutine(BonusAnim);
                     bonusProgress.gameObject.SetActive(false);
@@ -139,7 +140,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 else
                 {
                     if(mediator!=null)
-                    c.ScoreOnGlobal = bonusProgress.value;
+                    scoreChangerCommand.ScoreOnGlobal = bonusProgress.value;
                 }
                 state = 0;
                 if (currentBag == bolsasDisponibles)

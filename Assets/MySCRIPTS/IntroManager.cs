@@ -23,7 +23,8 @@ public class IntroManager : MonoBehaviour
     {
         this.OnEndIntro = OnEndIntro;
         OnChangeBolsa += isChangeEnd; 
-        bolsaMove.Init( OnChangeBolsa, 1);
+        bolsaMove.Init( OnChangeBolsa);
+        bolsaMove.MyStart(1);
         introInstructivoAnim.Play("InstrucvitoInit");
     }
 
