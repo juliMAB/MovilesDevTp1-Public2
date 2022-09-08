@@ -6,26 +6,33 @@ using UnityEngine.UI;
 
 public class CanvasGameManager : MonoBehaviour
 {
-    [SerializeField] Mediator mediator;
+    #region EXPOSED_FIELDS
+    [SerializeField] private Mediator mediator;
 
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] TextMeshProUGUI text2;
-    [SerializeField] Image ImagenTop;
-    [SerializeField] Sprite[] TopTruckSprite;
+    [SerializeField] private TextMeshProUGUI bagsOnTruckTMP;
+    [SerializeField] private TextMeshProUGUI totalMoneyTMP;
+    [SerializeField] private Image ImagenTop;
+    [SerializeField] private Sprite[] TopTruckSprite;
 
-    [SerializeField] float timeToChangeTopImageAnim;
+    [SerializeField] private float timeToChangeTopImageAnim;
+    #endregion
 
+    #region PRIVATE_FIELDS
     private Coroutine currentCorrutine;
+    #endregion
 
+    #region UNITY_CALLS
     private void Start()
     {
         mediator.Subscribe<ScoreChangedCommand>(ScoreChangeUI);
     }
+    #endregion
 
-    void ScoreChangeUI(ScoreChangedCommand c)
+    #region PRIVATE_METHODS
+    private void ScoreChangeUI(ScoreChangedCommand c)
     {
-        text.text = "Truck: " + c.BagsOnTruck.ToString();
-        text2.text = "Total: " + c.ScoreOnGlobal.ToString();
+        bagsOnTruckTMP.text = "Truck: " + c.BagsOnTruck.ToString();
+        totalMoneyTMP.text = "Total: " + c.ScoreOnGlobal.ToString();
 
         switch (c.BagsOnTruck)
         {
@@ -37,8 +44,10 @@ public class CanvasGameManager : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
-    IEnumerator ChangeSpriteGoDeposit()
+    #region PRIVATE_CORRUTINE
+    private IEnumerator ChangeSpriteGoDeposit()
     {
         int b=3;
         while (true)
@@ -49,4 +58,5 @@ public class CanvasGameManager : MonoBehaviour
                 b = 3;
         }
     }
+    #endregion
 }
