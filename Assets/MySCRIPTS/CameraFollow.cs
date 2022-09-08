@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
+    #region EXPOSED_FIELDS
     [SerializeField] private Vector3 offset;
     [SerializeField] private Transform target;
     [SerializeField] private float translateSpeed;
     [SerializeField] private float rotationSpeed;
+    #endregion
 
+    #region UNITY_CALLS
     private void FixedUpdate()
     {
         HandleTranslation();
         HandleRotation();
     }
+    #endregion
 
+    #region PRIVATE_METHODS
     private void HandleTranslation()
     {
         var targetPasition = target.TransformPoint(offset);
@@ -28,4 +32,5 @@ public class CameraFollow : MonoBehaviour
         var rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
     }
+    #endregion
 }
