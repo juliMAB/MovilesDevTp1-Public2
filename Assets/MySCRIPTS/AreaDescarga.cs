@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class AreaDescarga : MonoBehaviour
 {
+    #region EXPOSED_FIELD
     [SerializeField] private bool inUse = false;
+    #endregion
+
+    #region UNITY_CALLS
+
     private void OnTriggerEnter(Collider other)
     {
         if (inUse)
@@ -23,4 +28,5 @@ public class AreaDescarga : MonoBehaviour
         if (idownloadable != null)
             inUse = false;
     }
+    #endregion
 }
