@@ -4,21 +4,22 @@ using UnityEngine;
 public class Obstacle2 : MonoBehaviour
 {
     #region EXPOSED_FIELD
-    [SerializeField] LayerMask layerMaskPlayer;
-    [SerializeField] bool inUse = false;
+    [SerializeField] private LayerMask layerMaskPlayer;
+    [SerializeField] private bool inUse = false;
+    [SerializeField] private Rigidbody _rb = null;
+    [SerializeField] private Collider _collider = null;
     #endregion
 
     #region PRIVATE_FIELD
-    private Rigidbody _rb = null;
-    private Collider _collider = null;
     #endregion
 
     #region UNITY_CALLS
-    private void OnValidate()
+
+    private void Start()
     {
-        if (_rb==null)
+        if (_rb == null)
             _rb.GetComponent<Rigidbody>();
-        if (_collider==null)
+        if (_collider == null)
             _collider = GetComponent<Collider>();
     }
     void OnCollisionEnter(Collision coll)

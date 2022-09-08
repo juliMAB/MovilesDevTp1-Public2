@@ -8,26 +8,26 @@ public class Taxi2 : MonoBehaviour
     [SerializeField] Transform firstNode;
 
     [SerializeField] float speed;
+    
+    [SerializeField] private Rigidbody _rb;
     #endregion
 
     #region PRIVATE_FIELDS
-
-    private Rigidbody _rb;
-    
     private Vector3 DestinationPoint;
     #endregion
 
     #region UNITY_CALLS
 
-    private void OnValidate()
-    {
-        DestinationPoint = firstNode.position;
-        if (_rb==null)
-            _rb.GetComponent<Rigidbody>();
-    }
     private void Start()
     {
+        DestinationPoint = firstNode.position;
         transform.LookAt(DestinationPoint, Vector3.up);
+    }
+
+    private void OnEnable()
+    {        
+        if (_rb == null)
+            _rb.GetComponent<Rigidbody>();
     }
     private void Update()
     {
