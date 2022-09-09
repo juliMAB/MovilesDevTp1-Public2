@@ -3829,7 +3829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  b_twoPlayers: 0
+  b_twoPlayers: 1
   intro:
   - {fileID: 482412733}
   - {fileID: 381982511}
@@ -5900,6 +5900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3a12565c20ad44f90f20ddaf88e2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  go_game: {fileID: 1844852891}
   mediator:
   - {fileID: 465599584}
   - {fileID: 57892772}
