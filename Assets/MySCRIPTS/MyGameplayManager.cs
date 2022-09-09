@@ -30,6 +30,8 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     private static int bagValue = 1;
 
+    private FadeController m_fadeController;
+
     public static bool TwoPlayers { get => twoPlayers; set => twoPlayers = value; }
     public static int BagValue { get => bagValue; set => bagValue = value; }
 
@@ -41,8 +43,9 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     private void Start()
     {
+        FadeStart();
         ManagerTwo.Init(ref OnEndIntro);
-        OnEndIntro += () => { go_game.SetActive(true); timer.Init(f_timeGame, EndGame); };
+        OnEndIntro += () => { go_game.SetActive(true); timer.Init(f_timeGame,()=> m_fadeController.FadeOut(1.0f, Color.black, EndGame));  ; };
         intro[0].Init(OnEndIntro);
         if (twoPlayers)
             intro[1].Init(OnEndIntro);
@@ -65,5 +68,16 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
     private void UpdateLocalScoreTwo(ScoreChangedCommand c)
     {
         score[1] = c.ScoreOnGlobal;
+    }
+
+    private void FadeStart()
+    {
+
+        m_fadeController = FadeController.Instance;
+        m_fadeController.SetSortingOrder(1);
+        m_fadeController.FadeIn(1.0f, Color.black);
+
+        FadeController.Instance.FadeIn(1.0f);
+
     }
 }
