@@ -15,8 +15,6 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] Action OnChangeBolsa = null;
 
-    [SerializeField] bool input = true;
-
     [SerializeField] bool firstInstructivo = true;
 
     public void Init(Action OnEndIntro)

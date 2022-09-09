@@ -5,9 +5,11 @@ using UnityEngine;
 public class Bolsa2 : MonoBehaviour, Ipickapeable
 {
     #region EXPOSED_FIELD
+#pragma warning disable CS0108 // El miembro oculta el miembro heredado. Falta una contraseña nueva
     [SerializeField] private ParticleSystem particleSystem;
-	[SerializeField] private MeshRenderer visual;
+    [SerializeField] private MeshRenderer visual;
 	[SerializeField] private Collider collider;
+#pragma warning restore CS0108 // El miembro oculta el miembro heredado. Falta una contraseña nueva
     #endregion
 
     #region UNITY_CALLS
