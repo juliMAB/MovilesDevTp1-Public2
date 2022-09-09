@@ -10,7 +10,7 @@ class ScoreChangedCommand : ICommand
     {
         get;
         set;
-    } 
+    }
 }
 
 class SceneChangedCommand : ICommand

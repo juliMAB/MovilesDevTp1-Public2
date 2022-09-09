@@ -3929,6 +3929,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+  mediator:
+  - {fileID: 465599584}
+  - {fileID: 57892772}
   b_twoPlayers: 1
   intro:
   - {fileID: 482412733}
@@ -3940,6 +3943,9 @@ MonoBehaviour:
   ManagerTwo: {fileID: 2081857800}
   timer: {fileID: 1628427265}
   f_timeGame: 10
+  score:
+  - 0
+  - 0
 --- !u!4 &1628427264
 Transform:
   m_ObjectHideFlags: 0
