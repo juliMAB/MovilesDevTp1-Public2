@@ -1,9 +1,4 @@
-
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.SearchService;
 using UnityEngine;
     public enum GameState
     {
@@ -22,7 +17,7 @@ using UnityEngine;
 public class ManagerTwoPlayer : MonoBehaviour
 {
 
-    //SceneChangedCommand _sceneChanged;
+    [SerializeField] GameObject go_game;
 
     [SerializeField] Mediator[] mediator = null;
 
@@ -51,6 +46,7 @@ public class ManagerTwoPlayer : MonoBehaviour
         {
             mediator[(int)PjIndex.pj1].Subscribe<SceneChangedCommand>(ChangeSceneOnePlayer);
             mediator[(int)PjIndex.pj2].gameObject.SetActive(false);
+            SetAssetsAllOff(PjIndex.pj2);
         }
         OnEndIntro += IntroToGame;
     }
@@ -74,8 +70,9 @@ public class ManagerTwoPlayer : MonoBehaviour
         }
     }
 
-    private void IntroToGame()
+    public void IntroToGame()
     {
+        go_game.SetActive(true);
         if (MyGameplayManager.TwoPlayers)
         {
             for (int i = 0; i < 2; i++)
@@ -88,7 +85,10 @@ public class ManagerTwoPlayer : MonoBehaviour
         }
         else
         {
+            SetAssetsOn(PjIndex.pj1, GameState.Camion);
+            SetAssetsOn(PjIndex.pj1, GameState.Deposit);
             SetCanvasOneOn(GameState.Game);
+            SetCameraOn(PjIndex.pj1, GameState.Game);
         }
     }
 
@@ -140,10 +140,7 @@ public class ManagerTwoPlayer : MonoBehaviour
     private void SetCanvasOneOn(GameState s)
     {
         for (int i = 0; i < canvas1Player.Length; i++)
-        {
             canvas1Player[i].SetActive(false);
-            if (i == (int)s)
-                canvas1Player[i].SetActive(true);
-        }
+        canvas1Player[(int)s].SetActive(true);
     }
 }

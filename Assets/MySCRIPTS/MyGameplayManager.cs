@@ -32,19 +32,11 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     public void Start()
     {
-        OnEndIntro += TestCall;
+        ManagerTwo.Init(ref OnEndIntro);
+        OnEndIntro +=()=> { go_game.SetActive(true); };
         intro[0].Init(OnEndIntro);
         if(twoPlayers)
-        {
-           ManagerTwo.Init(ref OnEndIntro);
            intro[1].Init(OnEndIntro);
-        }
         go_game.SetActive(false);
     }
-
-   private void TestCall()
-   {
-       //prenderGame
-       go_game.SetActive(true);
-   }
 }

@@ -27,7 +27,7 @@ public class ManagerDescarga : MonoBehaviour
 
         mediator.Subscribe<ScoreChangedCommand>(UpdateBagCuantityOnDeposit);
         
-        animatorMoveAnim.Init(OnEndDeposit);
+        animatorMoveAnim.Init( OnEndDeposit);
     }
 
     private void UpdateBagCuantityOnDeposit(ScoreChangedCommand c)

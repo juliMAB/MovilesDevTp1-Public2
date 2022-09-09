@@ -19,7 +19,7 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] bool firstInstructivo = true;
 
-    public void Init( Action OnEndIntro)
+    public void Init(Action OnEndIntro)
     {
         this.OnEndIntro = OnEndIntro;
         OnChangeBolsa += isChangeEnd; 

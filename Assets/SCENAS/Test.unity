@@ -3829,7 +3829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  b_twoPlayers: 1
+  b_twoPlayers: 0
   intro:
   - {fileID: 482412733}
   - {fileID: 381982511}

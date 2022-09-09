@@ -31,7 +31,7 @@ public class BolsaMoveAnim : MonoBehaviour
 
     private ScoreChangedCommand scoreChangerCommand = new ScoreChangedCommand();
 
-    public void Init( Action OnEndDescarga)
+    public void Init(Action OnEndDescarga)
     {
         
         OnEndDescarga += Restart;
