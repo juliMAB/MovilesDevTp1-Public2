@@ -8,4 +8,8 @@ public class ChangeSceneFade : MonoBehaviour
     {
         FadeController.Instance.FadeOut(1, Color.black, () => GameManager.Get().LoadGame());
     }
+    public void ChangeToMenu()
+    {
+        FadeController.Instance.FadeOut(1, Color.black, () => GameManager.Get().LoadMenu());
+    }
 }

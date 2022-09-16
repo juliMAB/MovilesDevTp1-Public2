@@ -8,23 +8,44 @@ public class Timer : MonoBehaviour
     private float m_time;
     private Action OnEndTimer;
 
-    public float LocalTime { get => m_time; set => m_time = value; }
+    float f_totalTime=99999;
+    public float LocalTime { get => f_totalTime; }
 
     public void Init(float time,Action OnEndTimer)
     {
         m_time = time;
+        f_totalTime = m_time;
         this.OnEndTimer = OnEndTimer;
-        StartCoroutine(counter());
+        GameStateManager.Get().OnGameStateChanged += OnGameStateChanged;
+
     }
 
-    private IEnumerator counter()
+    private void Update()
     {
-        float f_totalTime = m_time;
-        while (m_time>0)
+        if (f_totalTime > 0)
         {
-            yield return null;
-            m_time -= Time.deltaTime;
+            f_totalTime -= Time.deltaTime;
+            return;
         }
-        OnEndTimer?.Invoke();
+        else
+        {
+            OnEndTimer?.Invoke();
+            this.enabled = false;
+        }
+    }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        if (newGameState == GameState.Gameplay)
+        {
+            enabled = true;
+        }
+        else
+        enabled = false ;
+    }
+
+    private void reset()
+    {
+        f_totalTime = m_time;
     }
 }

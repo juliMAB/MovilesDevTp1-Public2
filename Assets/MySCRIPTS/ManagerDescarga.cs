@@ -36,7 +36,7 @@ public class ManagerDescarga : MonoBehaviour
     }
     private void InitDeposit(SceneChangedCommand c)
     {
-        if (!(c.OnGoIndex==(int)GameState.Deposit))
+        if (!(c.OnGoIndex==(int)GameStage.Deposit))
            return;
        sceneChangedCommand.pjIndex = c.pjIndex;
        animator.enabled = true;
@@ -53,7 +53,7 @@ public class ManagerDescarga : MonoBehaviour
     private void LasCallEndDeposit()
     {
         animator.enabled = false;
-        sceneChangedCommand.OnGoIndex = (int)GameState.Game;
+        sceneChangedCommand.OnGoIndex = (int)GameStage.Game;
         mediator.Publish(sceneChangedCommand);
     }
 }

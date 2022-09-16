@@ -45,7 +45,7 @@ public class Player2 : MonoBehaviour, Idownloadable
     public void IntroDeposit()
     {
         StopCar();
-        sceneChanged.OnGoIndex = (int)GameState.Deposit;
+        sceneChanged.OnGoIndex = (int)GameStage.Deposit;
         sceneChanged.pjIndex = (int)id;
         mediator.Publish(sceneChanged);
     }
@@ -63,7 +63,7 @@ public class Player2 : MonoBehaviour, Idownloadable
 
     private void OutDeposit(SceneChangedCommand c)
     {
-        if (c.OnGoIndex != (int)GameState.Game)
+        if (c.OnGoIndex != (int)GameStage.Game)
             return;
         StartCar();
     }

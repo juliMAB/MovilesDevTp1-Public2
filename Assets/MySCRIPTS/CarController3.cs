@@ -45,6 +45,7 @@ public class CarController3 : MonoBehaviour
     {
         if (carRb == null)
             carRb = GetComponent<Rigidbody>();
+        GameStateManager.Get().OnGameStateChanged += OnGameStateChanged;
         carRb.centerOfMass = Vector3.zero;
     }
     private void Update()
@@ -60,6 +61,18 @@ public class CarController3 : MonoBehaviour
     #endregion
 
     #region PRIVATE_METHODS
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        if (newGameState == GameState.Pause)
+        {
+            carRb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+        else
+        {
+            carRb.constraints = RigidbodyConstraints.None;
+        }
+    }
     private void GetInput()
     {
         if (!inputEnabled)
