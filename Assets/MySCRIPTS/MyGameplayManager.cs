@@ -47,6 +47,7 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
         FadeStart();
         ManagerTwo.Init(ref OnEndIntro);
         OnEndIntro += () => { go_game.SetActive(true); timer.Init(f_timeGame,()=> m_fadeController.FadeOut(1.0f, Color.black, EndGame));  ; };
+        OnEndIntro += () => { go_intro[0].gameObject.SetActive(false); go_intro[1].gameObject.SetActive(false); };
         intro[0].Init(OnEndIntro);
         if (twoPlayers)
             intro[1].Init(OnEndIntro);
