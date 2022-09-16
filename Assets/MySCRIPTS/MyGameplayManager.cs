@@ -57,9 +57,9 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     private void EndGame()
     {
-        GameManager.score1 = score[0];
-        GameManager.score2 = score[0];
-        GameManager.LoadEnd();
+        GameManager.Get().score1 = score[0];
+        GameManager.Get().score2 = score[0];
+        GameManager.Get().LoadEnd();
     }
     private void UpdateLocalScoreOne(ScoreChangedCommand c)
     {
