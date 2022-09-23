@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5488689328206027428}
   - component: {fileID: 5488689328206027431}
   - component: {fileID: 5488689328206027430}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: TrackChek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Next: {fileID: 0}
+  localMaterial: {fileID: 2100000, guid: 92ee4a4b89d0e634f93b25d32103cb57, type: 2}

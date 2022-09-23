@@ -4,6 +4,7 @@ public class AreaDescarga : MonoBehaviour
 {
     #region EXPOSED_FIELD
     [SerializeField] private bool inUse = false;
+    [SerializeField] Material localMaterial;
     #endregion
 
     #region UNITY_CALLS
@@ -28,5 +29,11 @@ public class AreaDescarga : MonoBehaviour
         if (idownloadable != null)
             inUse = false;
     }
+#if !UNITY_EDITOR
+    private void Start()
+    {
+        localMaterial.color = Color.clear;
+    }
+#endif
     #endregion
 }

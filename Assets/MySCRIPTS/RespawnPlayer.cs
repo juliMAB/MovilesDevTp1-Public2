@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RespawnPlayer : MonoBehaviour
 {
+    #region EXPOSED_FIELDS
+    [SerializeField] LayerMask makeRespawn;
+    #endregion
     #region PRIVATE_FIELDS
     private Vector3 respawnPoint;
     private Rigidbody rb;
@@ -36,6 +39,11 @@ public class RespawnPlayer : MonoBehaviour
         {
             respawnPoint = irespawneable.GetRespawnPoint();
         }
+        if ((makeRespawn & 1 << other.gameObject.layer) == 1 << other.gameObject.layer)
+        {
+            Respawn();
+        }
+
     }
     #endregion
 

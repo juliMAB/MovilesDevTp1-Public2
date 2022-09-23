@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public int dificulty = 0;
 
-    public void LoadGame() => SceneManager.LoadScene("Game");
+    public void LoadGame() => SceneManager.LoadScene("Game2");
 
     public void LoadEnd() => SceneManager.LoadScene("End");
 

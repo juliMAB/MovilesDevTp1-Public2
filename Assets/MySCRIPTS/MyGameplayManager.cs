@@ -32,6 +32,8 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     private FadeController m_fadeController;
 
+    [SerializeField] GameObject FactoryLevel;
+
     public static bool TwoPlayers { get => twoPlayers; set => twoPlayers = value; }
     public static int BagValue { get => bagValue; set => bagValue = value; }
 
@@ -55,6 +57,22 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
         mediator[0].Subscribe<ScoreChangedCommand>(UpdateLocalScoreOne);
         if (twoPlayers)
             mediator[0].Subscribe<ScoreChangedCommand>(UpdateLocalScoreTwo);
+        FactoryInitLevel();
+    }
+    private void FactoryInitLevel()
+    {
+        switch (GameManager.Get().dificulty)
+        {
+            case 0:
+                FactoryLevel.AddComponent<Level1>();
+                break;
+            case 1:
+                FactoryLevel.AddComponent<Level2>();
+                break;
+            case 2:
+                FactoryLevel.AddComponent<Level3>();
+                break;
+        }
     }
 
     private void EndGame()
