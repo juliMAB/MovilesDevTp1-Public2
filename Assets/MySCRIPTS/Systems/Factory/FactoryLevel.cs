@@ -4,18 +4,27 @@ using UnityEngine;
 
 public abstract class FactoryLevel : MonoBehaviour
 {
-    protected List<GameObject> cajitas = new List<GameObject>();
-    protected List<GameObject> taxis = new List<GameObject>();
-    protected List<GameObject> bolsas = new List<GameObject>();
-   ObstaclesPool obstaclesPool= null;
+   protected ObstaclesPool obstaclesPool= null;
 
-    public void Start()
+    public void Init()
     {
         obstaclesPool = ObstaclesPool.Get();
-        cajitas = obstaclesPool.cajitas;
-        taxis = obstaclesPool.taxis;
-        bolsas = obstaclesPool.bolsas;
+        SpawnAll();
     }
 
     public abstract void SpawnAll();
+
+    protected abstract void SpawnBolsas();
+
+    protected abstract void SpawnCaja();
+
+    protected abstract void SpawnCono();
+
+    protected abstract void SpawnTaxis();
+
+    protected bool RandomSpawn(int percent)
+    {
+        int randomNum = Random.Range(0, 101);
+        return percent >= randomNum;
+    }
 }

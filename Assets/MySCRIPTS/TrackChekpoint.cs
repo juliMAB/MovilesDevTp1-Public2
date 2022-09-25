@@ -7,15 +7,28 @@ public class TrackChekpoint : MonoBehaviour
     #region EXPOSED_FIELD
     [SerializeField] TrackChekpoint Next;
     [SerializeField] Material localMaterial;
+    [SerializeField] LayerMask taxiLayer;
+    [SerializeField] bool lastNode;
     #endregion
 
     #region UNITY_CALLS
     private void OnTriggerEnter(Collider other)
     {
-        Taxi2 taxi = other.GetComponent<Taxi2>();
-        if (taxi!=null)
+        if (((1 << other.gameObject.layer) & taxiLayer) != 0)
         {
-            taxi.SetDestination(Next.transform.position);
+            Taxi2 taxi = other.GetComponent<Taxi2>();
+            if (taxi != null)
+            {
+                if (lastNode)
+                {
+
+                    taxi.transform.position = Next.transform.position;
+                    taxi.SetDestination(Next.Next.transform.position);
+                }
+                else
+                taxi.SetDestination(Next.transform.position);
+
+            }
         }
     }
     #if !UNITY_EDITOR

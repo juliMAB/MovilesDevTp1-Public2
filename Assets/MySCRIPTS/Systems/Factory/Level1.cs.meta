@@ -3,7 +3,12 @@ guid: bc58ca3cd0a8fb642bd9c5261164849c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bolsa: {fileID: 364228006033477019, guid: 24beee33dab87d84998ba6d91546a5ce, type: 3}
+  - taxi: {fileID: 172047480168213015, guid: 9bb48b84319073f4782da8ebc4d6d9d7, type: 3}
+  - caja1: {fileID: 3634032095913120031, guid: d2bfab1ce9499ae44b42c645dc6ff87b, type: 3}
+  - caja2: {fileID: 8088556705323425935, guid: 69a507555c95c5642950c362680d4b0b, type: 3}
+  - cono: {fileID: 4069816706633474765, guid: a897b5e9b33ec0148b12bbf62af31ce8, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

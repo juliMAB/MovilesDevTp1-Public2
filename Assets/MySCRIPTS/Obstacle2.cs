@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Obstacle2 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Obstacle2 : MonoBehaviour
     [SerializeField] private bool inUse = false;
     [SerializeField] private Rigidbody _rb = null;
     [SerializeField] private Collider _collider = null;
+    public UnityEvent OnDestroyThis = null;
     #endregion
 
     #region PRIVATE_FIELD
@@ -31,7 +33,11 @@ public class Obstacle2 : MonoBehaviour
         {
             _rb.useGravity = true;
             coll.rigidbody.velocity = Vector3.zero;
+            coll.rigidbody.angularVelocity = Vector3.zero;
             inUse = true;
+            if (OnDestroyThis != null)
+                OnDestroyThis.Invoke();
+            else
             StartCoroutine(DestroyAfter(2));
         }
     }
