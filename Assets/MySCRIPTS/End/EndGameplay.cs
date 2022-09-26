@@ -20,10 +20,12 @@ public class EndGameplay : MonoBehaviour
         if (GameManager.Get().two_players)
         {
             canvas2.SetActive(true);
+            localAnimation2.Play("EndScene2");
         }
         else
         {
             canvas1.SetActive(true);
+            localAnimation1.Play("EndScene");
         }
         StartCoroutine(OnStart(timeToBackMenu));
     }
