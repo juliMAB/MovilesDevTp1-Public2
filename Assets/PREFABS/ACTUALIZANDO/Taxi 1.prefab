@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8481113770720827281}
   - component: {fileID: 902334746936526808}
   - component: {fileID: 5824803802211415014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Carcasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 761254819112756537}
-  m_Layer: 0
-  m_Name: taxi
+  m_Layer: 7
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3781227647290980741}
   - component: {fileID: 5818507185555437844}
   - component: {fileID: 399045167863337064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_Bc_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2503655114343077181}
   - component: {fileID: 2366495762746374611}
   - component: {fileID: 4542912431183908367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vidrio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 3953260908769191023}
   - component: {fileID: 7491688904737974536}
   - component: {fileID: 2607486610889766871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_Ft_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 3223384041443743995}
   - component: {fileID: 2595083135407595087}
   - component: {fileID: 3633523572350627850}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_Bc_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 98305521183775925}
   - component: {fileID: 4746373251199874680}
   - component: {fileID: 139078747654440072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Luces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 6421724456412800945}
   - component: {fileID: 6896586170591524932}
   - component: {fileID: 8016000652946442809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_Ft_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 9145336131125136933}
   - component: {fileID: 9145336131125136932}
   - component: {fileID: 194509868}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Taxi 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,9 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1418dd256c1da4f9865243a7e0a7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestinationPoint: {x: -136.74393, y: -8.101636, z: -12.433638}
+  firstNode: {fileID: 0}
+  speed: 90
   _rb: {fileID: 9145336131125136938}
-  speed: 10
 --- !u!114 &194509868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,6 +712,21 @@ MonoBehaviour:
   inUse: 0
   _rb: {fileID: 9145336131125136938}
   _collider: {fileID: 9145336131125136933}
+  OnDestroyThis:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DestroyWhen, Assembly-CSharp
+        m_MethodName: OnCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9145336131722459682
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145336131722459683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

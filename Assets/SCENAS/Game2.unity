@@ -1065,9 +1065,9 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dbc87261d281a7245b91756394caa42a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.194
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3196,7 +3196,7 @@ MonoBehaviour:
   totalMoneyTMP: {fileID: 1195852989}
   ImagenTop: {fileID: 1041977124}
   TopTruckSprite:
-  - {fileID: 21300000, guid: a8fac8bd806f25e48a5bb1a409917617, type: 3}
+  - {fileID: -6581585101452300200, guid: a8fac8bd806f25e48a5bb1a409917617, type: 3}
   - {fileID: 21300000, guid: 199c137dd8d75bc4f8c27827f02d1e1a, type: 3}
   - {fileID: 21300000, guid: c57b4dee21dacdc4b840149d65a50d2d, type: 3}
   - {fileID: 21300000, guid: 18291cd4e29d9c34d9be61940a4d35df, type: 3}
@@ -4945,7 +4945,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8fac8bd806f25e48a5bb1a409917617, type: 3}
+  m_Sprite: {fileID: -6581585101452300200, guid: a8fac8bd806f25e48a5bb1a409917617,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5576,7 +5577,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.35
+  m_fontSize: 41.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5975,7 +5976,7 @@ MonoBehaviour:
   two_players: 0
   score1: 0
   score2: 0
-  dificulty: 0
+  dificulty: 2
 --- !u!1 &1445338548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11423,6 +11424,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757063686656928935, guid: 1167a0ac0abf5f04ea6c58255ffa23be,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 757063686656928935, guid: 1167a0ac0abf5f04ea6c58255ffa23be,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 757063686656931928, guid: 1167a0ac0abf5f04ea6c58255ffa23be,
         type: 3}

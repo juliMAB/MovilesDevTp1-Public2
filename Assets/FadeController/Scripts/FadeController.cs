@@ -109,6 +109,7 @@ public class FadeController : MonoBehaviour {
                 fadePanelObj.AddComponent<CanvasRenderer>();
                 fadePanelObj.transform.SetParent(canvasObj.transform);
                 m_fadePanel = fadePanelObj.AddComponent<Image>();
+                m_fadePanel.raycastTarget = false;
 
                 m_canvasComp.renderMode = RenderMode.ScreenSpaceOverlay;
                 m_fadePanel.rectTransform.anchorMin = Vector2.zero;

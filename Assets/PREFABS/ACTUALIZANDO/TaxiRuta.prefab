@@ -370,6 +370,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1590285884594442335}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &5640901027164494574 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6366213070839564977, guid: aa2415b0b2bf8a34ba503b1932b22f1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1590285884594442335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8973983576557509540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,53 +384,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 172047480168213012}
     m_Modifications:
     - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
       propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3987964380646779496}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCall
-      objectReference: {fileID: 0}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DestroyWhen, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 194509868, guid: e11653e51a8c1bb46a1d7329f95d23ee, type: 3}
-      propertyPath: OnDestroyThis.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 63492984980597781, guid: e11653e51a8c1bb46a1d7329f95d23ee,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 133794712887066499, guid: e11653e51a8c1bb46a1d7329f95d23ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Model
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145336131125136932, guid: e11653e51a8c1bb46a1d7329f95d23ee,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 9145336131125136932, guid: e11653e51a8c1bb46a1d7329f95d23ee,
         type: 3}
       propertyPath: firstNode
       value: 
-      objectReference: {fileID: 111128549101324853}
+      objectReference: {fileID: 5640901027164494574}
     - target: {fileID: 9145336131125136935, guid: e11653e51a8c1bb46a1d7329f95d23ee,
         type: 3}
       propertyPath: m_Name

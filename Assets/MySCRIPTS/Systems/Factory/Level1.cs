@@ -18,7 +18,7 @@ public class Level1 : FactoryLevel
         for (int i = 0; i < obstaclesPool.bolsasSpawnPoint.Count; i++)
         {
             if (!RandomSpawn(100))
-                return;
+                continue;
             Vector3 pos = obstaclesPool.bolsasSpawnPoint[i].transform.position;
             Quaternion rot = obstaclesPool.bolsasSpawnPoint[i].transform.rotation;
             Vector3 scl = obstaclesPool.bolsasSpawnPoint[i].transform.localScale;
@@ -32,7 +32,7 @@ public class Level1 : FactoryLevel
         for (int i = 0; i < obstaclesPool.cajitasSpawnPoint.Count; i++)
         {
             if (!RandomSpawn(70))
-                return;
+                continue;
             Vector3 pos = obstaclesPool.cajitasSpawnPoint[i].transform.position;
             Quaternion rot = obstaclesPool.cajitasSpawnPoint[i].transform.rotation;
             Vector3 scl = obstaclesPool.cajitasSpawnPoint[i].transform.localScale;

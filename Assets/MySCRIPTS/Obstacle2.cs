@@ -35,7 +35,7 @@ public class Obstacle2 : MonoBehaviour
             coll.rigidbody.velocity = Vector3.zero;
             coll.rigidbody.angularVelocity = Vector3.zero;
             inUse = true;
-            if (OnDestroyThis != null)
+            if (OnDestroyThis.GetPersistentEventCount() != 0)
                 OnDestroyThis.Invoke();
             else
             StartCoroutine(DestroyAfter(2));

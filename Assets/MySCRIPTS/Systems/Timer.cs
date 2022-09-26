@@ -22,6 +22,8 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.V))
+            f_totalTime -= 10;
         if (f_totalTime > 0)
         {
             f_totalTime -= Time.deltaTime;
