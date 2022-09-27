@@ -8,6 +8,7 @@ public class IntroManager : MonoBehaviour
     [SerializeField] BolsaMoveAnim bolsaMove = null;
 
     [SerializeField] Animator introInstructivoAnim = null;
+    [SerializeField] Animator introInstructivoAnimAndroid = null;
 
     [SerializeField] static bool playerCheck = false;
 
@@ -17,13 +18,28 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] bool firstInstructivo = true;
 
+    [SerializeField] FixedJoystick joystick = null;
+
+
     public void Init(Action OnEndIntro)
     {
         this.OnEndIntro = OnEndIntro;
         OnChangeBolsa += isChangeEnd; 
         bolsaMove.Init( OnChangeBolsa);
-        bolsaMove.MyStart(1);
-        introInstructivoAnim.Play("InstrucvitoInit");
+
+#if UNITY_ANDROID
+        if (introInstructivoAnimAndroid!=null)
+        {
+            introInstructivoAnimAndroid.Play("InstrucvitoInit");
+            Destroy (introInstructivoAnim.gameObject);
+        }
+#endif
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+        if (introInstructivoAnim != null)
+        {
+            introInstructivoAnim.Play("InstrucvitoInit");
+        }
+#endif
     }
 
 
@@ -54,10 +70,28 @@ public class IntroManager : MonoBehaviour
     {
         if (!firstInstructivo)
             return;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (Input.GetKey(KeyCode.W))
         {
-            firstInstructivo = false;
-            introInstructivoAnim.Play("InstructivoIddle");
+            if (introInstructivoAnim!=null)
+            {
+                firstInstructivo = false;
+                introInstructivoAnim.Play("InstructivoIddle");
+                bolsaMove.MyStart(1);
+            }
         }
+#endif
+#if UNITY_ANDROID
+        if (joystick.Vertical >= 0.8f)
+        {
+            if (introInstructivoAnimAndroid!=null)
+            {
+                firstInstructivo = false;
+                introInstructivoAnimAndroid.Play("InstructivoIddle");
+                bolsaMove.MyStart(1);
+            }
+        }
+#endif
+
     }
 }
