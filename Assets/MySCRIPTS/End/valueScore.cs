@@ -31,6 +31,7 @@ public class valueScore : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(valueScore))]
 public class valueScoreEditor : Editor
 {
@@ -45,4 +46,5 @@ public class valueScoreEditor : Editor
 
     }
 }
+#endif
 

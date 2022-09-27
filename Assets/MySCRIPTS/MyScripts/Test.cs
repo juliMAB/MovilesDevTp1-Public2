@@ -36,6 +36,8 @@ public class Test : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
+
 [CustomEditor(typeof(Test))]
 public class TestEdit: Editor
 {
@@ -54,3 +56,4 @@ public class TestEdit: Editor
         }
     }
 }
+#endif

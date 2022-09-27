@@ -55,7 +55,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4967c37bb5fe135449b8e3f7f27c077e, type: 3}
   - {fileID: 21300000, guid: fbb27aeb5d7b8ce46b4426ca2aac086c, type: 3}
   - {fileID: 21300000, guid: 555234cde9ba4444497c727928ac2408, type: 3}
-  - {fileID: 21300000, guid: caaa7acdd895e5d4f8d15f1abdc3c07e, type: 3}
   m_PackedSpriteNamesToIndex:
   - PreTut1 1
   - PreTut2 1
@@ -66,7 +65,6 @@ SpriteAtlas:
   - BONUS
   - NewTut3
   - UNO
-  - DOS
   m_RenderDataMap: {}
   m_Tag: TutAtlas
   m_IsVariant: 0

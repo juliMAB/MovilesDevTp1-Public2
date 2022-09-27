@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class capture : MonoBehaviour
 {

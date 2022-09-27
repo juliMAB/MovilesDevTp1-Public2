@@ -56,7 +56,7 @@ public class Level2 : FactoryLevel
             Vector3 pos = obstaclesPool.conosSpawnPoint[i].transform.position;
             Quaternion rot = obstaclesPool.conosSpawnPoint[i].transform.rotation;
             Vector3 scl = obstaclesPool.conosSpawnPoint[i].transform.localScale;
-            GameObject b = Instantiate(obstaclesPool.caja2, pos, rot, obstaclesPool.CajasParent.transform);
+            GameObject b = Instantiate(obstaclesPool.cono, pos, rot, obstaclesPool.CajasParent.transform);
             b.transform.localScale = scl;
         }
     }
