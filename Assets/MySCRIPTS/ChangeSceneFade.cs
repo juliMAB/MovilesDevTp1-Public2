@@ -16,6 +16,10 @@ public class ChangeSceneFade : MonoBehaviour
     {
         FadeController.Instance.FadeOut(1, Color.black, () => GameManager.Get().LoadMenu());
     }
+    public void ChangeToQuit()
+    {
+        FadeController.Instance.FadeOut(1, Color.black, () => GameManager.Get().Quit());
+    }
     private void FadeStart()
     {
 

@@ -18,4 +18,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public void LoadEnd() => SceneManager.LoadScene("End");
 
     public void LoadMenu() => SceneManager.LoadScene("Menu");
+
+    public void Quit() => Application.Quit();
 }
