@@ -4271,7 +4271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MoneyCars
+  m_text: MoneyTrucks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d878f726357643b4a9d5ea1caacdb3b7, type: 2}
   m_sharedMaterial: {fileID: 7676038609942965287, guid: d878f726357643b4a9d5ea1caacdb3b7,

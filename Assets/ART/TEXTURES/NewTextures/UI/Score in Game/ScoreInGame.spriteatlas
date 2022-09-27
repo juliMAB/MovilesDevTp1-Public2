@@ -50,7 +50,8 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 74431e206eebc984e9513761aee247e8, type: 3}
   - {fileID: 21300000, guid: 43b47ea21177fe44fb41eeb12d4499ba, type: 3}
-  - {fileID: 21300000, guid: d90d44545d0620248a544f5ccdfb2310, type: 3}
+  - {fileID: -2972611753655906157, guid: d90d44545d0620248a544f5ccdfb2310, type: 3}
+  - {fileID: -7819456504616785652, guid: d90d44545d0620248a544f5ccdfb2310, type: 3}
   - {fileID: 21300000, guid: 18291cd4e29d9c34d9be61940a4d35df, type: 3}
   - {fileID: 21300000, guid: 2477d3f5a73069247ae53c56a2a58ab3, type: 3}
   - {fileID: 21300000, guid: 8597a3b67643fbc4a98d7518587ae5e6, type: 3}
@@ -64,7 +65,8 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - P2-B
   - P1-F
-  - P2-A
+  - P2-A_0
+  - P2-A_1
   - P1-E
   - P2-C
   - P2-D
