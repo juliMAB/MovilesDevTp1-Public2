@@ -26,6 +26,8 @@ public class BolsaMoveAnim : MonoBehaviour
 
     [SerializeField] FixedJoystick joystick = null;
 
+    [SerializeField] InputLocal inputLocal = null;
+
     private Action OnEndDescarga; 
 
     private float horizontalValue;
@@ -175,9 +177,9 @@ public class BolsaMoveAnim : MonoBehaviour
     {
         if (!input)
             return;
-#if UNITY_EDITOR
-        horizontalValue = Input.GetAxis("Horizontal");
-        VerticalValue = Input.GetAxis("Vertical");
+#if UNITY_EDITOR || UNITY_STANDALONE
+        horizontalValue = inputLocal.GetHorizontal();
+        VerticalValue = inputLocal.getvertical();
 #endif
 
 #if UNITY_ANDROID_API

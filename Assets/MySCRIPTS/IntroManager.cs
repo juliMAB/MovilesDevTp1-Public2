@@ -20,6 +20,8 @@ public class IntroManager : MonoBehaviour
 
     [SerializeField] FixedJoystick joystick = null;
 
+    [SerializeField] InputLocal input = null;
+
 
     public void Init(Action OnEndIntro)
     {
@@ -38,6 +40,8 @@ public class IntroManager : MonoBehaviour
         if (introInstructivoAnim != null)
         {
             introInstructivoAnim.Play("InstrucvitoInit");
+            Destroy(introInstructivoAnimAndroid.gameObject);
+            Destroy(joystick.gameObject);
         }
 #endif
     }
@@ -57,6 +61,14 @@ public class IntroManager : MonoBehaviour
 
     private void isChangeEnd()
     {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+        if (introInstructivoAnim != null)
+            introInstructivoAnim.Play("InstructivoDone");
+#endif
+#if UNITY_ANDROID
+        if (introInstructivoAnimAndroid!=null)
+            introInstructivoAnimAndroid.Play("InstructivoDone");
+#endif
         if (EndInit())
             OnEndIntro?.Invoke();
     }
@@ -71,7 +83,7 @@ public class IntroManager : MonoBehaviour
         if (!firstInstructivo)
             return;
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-        if (Input.GetKey(KeyCode.W))
+        if (input.getvertical()>0)
         {
             if (introInstructivoAnim!=null)
             {

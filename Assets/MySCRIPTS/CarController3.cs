@@ -34,6 +34,8 @@ public class CarController3 : MonoBehaviour
 
     [SerializeField] FixedJoystick joystick = null;
 
+    [SerializeField] InputLocal input = null;
+
     #endregion
 
     #region PRIVATE_FIELDS
@@ -75,13 +77,14 @@ public class CarController3 : MonoBehaviour
             carRb.constraints = RigidbodyConstraints.None;
         }
     }
-    private void GetInput()
+    private void GetInput
+        ()
     {
         if (!inputEnabled)
             return;
 #if UNITY_EDITOR|| UNITY_STANDALONE_WIN
-        moveInput = Input.GetAxis("Vertical");
-        steerInput = Input.GetAxis("Horizontal");
+        moveInput = input.getvertical();
+        steerInput = input.GetHorizontal();
 #endif
 #if UNITY_ANDROID
         moveInput = joystick.Vertical;
