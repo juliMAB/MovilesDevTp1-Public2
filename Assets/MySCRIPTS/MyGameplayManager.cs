@@ -78,6 +78,11 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
     {
         m_fadeController.FadeOut(1.0f, Color.black, EndGame);
     }
+    public void ForceToMenu()
+    {
+        m_fadeController.FadeOut(1.0f, Color.black,()=> { GameManager.Get().LoadMenu(); });
+    }
+
     private void EndGame()
     {
         GameManager.Get().score1 = score[0];

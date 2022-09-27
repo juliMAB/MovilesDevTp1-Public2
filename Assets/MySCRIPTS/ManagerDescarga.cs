@@ -6,6 +6,7 @@ public class ManagerDescarga : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] Animator instructivo;
+    [SerializeField] Animator instructivoAndroid;
     [SerializeField] BolsaMoveAnim animatorMoveAnim;
     [SerializeField] private Mediator mediator;
 
@@ -26,6 +27,12 @@ public class ManagerDescarga : MonoBehaviour
         mediator.Subscribe<ScoreChangedCommand>(UpdateBagCuantityOnDeposit);
         
         animatorMoveAnim.Init( OnEndDeposit);
+#if UNITY_ANDROID
+        Destroy (instructivo.gameObject);
+#endif
+#if UNITY_STANDALONE
+        Destroy (instructivoAndroid.gameObject);
+#endif
     }
 
     private void UpdateBagCuantityOnDeposit(ScoreChangedCommand c)
@@ -43,7 +50,10 @@ public class ManagerDescarga : MonoBehaviour
    }
     private void EndDeposit()
     {
-        instructivo.Play("InstructivoDone");
+        if (instructivoAndroid!=null)
+            instructivoAndroid.Play("InstructivoDone");
+        else
+            instructivo.Play("InstructivoDone");
         animator.Play("EndDeposit");
         animatorMoveAnim.Restart();
         Invoke("LasCallEndDeposit", 1);

@@ -40,6 +40,18 @@ public class BolsaMoveAnim : MonoBehaviour
         this.OnEndDescarga = OnEndDescarga;
         if (mediator!=null)
             mediator.Subscribe<ScoreChangedCommand>(GetScoreOnMediator);
+        GameStateManager.Get().OnGameStateChanged += OnGameStateChanged;
+    }
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        if (newGameState == GameState.Pause)
+        {
+            input = false;
+        }
+        else
+        {
+            input = true;
+        }
     }
     public void AddToEndDescarga( Action addAction)
     {
@@ -206,6 +218,8 @@ public class BolsaMoveAnim : MonoBehaviour
         float totaltime = time;
         while (time>0)
         {
+            if(!input)
+                yield return null;
             time -= Time.deltaTime;
             bonusProgress.value = bonusProgress.maxValue - (bonusProgress.maxValue / totaltime * time);
             yield return null;

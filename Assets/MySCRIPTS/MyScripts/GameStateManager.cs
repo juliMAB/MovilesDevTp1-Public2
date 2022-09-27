@@ -22,4 +22,20 @@ public class GameStateManager : MonoBehaviourSingleton<GameStateManager>
         CurrentGameState = newGameState;
         OnGameStateChanged?.Invoke(newGameState);
     }
+
+    public void TooglePause()
+    {
+        switch (CurrentGameState)
+        {
+            case GameState.Gameplay:
+                SetState(GameState.Pause);
+                break;
+            case GameState.Pause:
+                SetState(GameState.Gameplay);
+                break;
+            default:
+                break;
+        }
+        
+    }
 }

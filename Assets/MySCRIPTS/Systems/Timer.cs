@@ -22,8 +22,11 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR|| UNITY_STANDALONE_WIN
         if (Input.GetKey(KeyCode.V))
             f_totalTime -= 10;
+
+#endif
         if (f_totalTime > 0)
         {
             f_totalTime -= Time.deltaTime;
