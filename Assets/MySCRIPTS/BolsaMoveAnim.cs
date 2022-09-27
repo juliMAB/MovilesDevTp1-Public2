@@ -177,7 +177,7 @@ public class BolsaMoveAnim : MonoBehaviour
     {
         if (!input)
             return;
-#if UNITY_EDITOR || UNITY_STANDALONE
+#if UNITY_STANDALONE
         horizontalValue = inputLocal.GetHorizontal();
         VerticalValue = inputLocal.getvertical();
 #endif

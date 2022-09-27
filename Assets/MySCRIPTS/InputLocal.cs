@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InputLocal : MonoBehaviour
 {
-#if PLATFORM_STANDALONE_WIN
+#if PLATFORM_STANDALONE_WIN || UNITY_EDITOR
 
     [SerializeField] KeyCode foward;
     [SerializeField] KeyCode back;

@@ -82,7 +82,7 @@ public class CarController3 : MonoBehaviour
     {
         if (!inputEnabled)
             return;
-#if UNITY_EDITOR|| UNITY_STANDALONE_WIN
+#if  UNITY_EDITOR ||UNITY_STANDALONE_WIN
         moveInput = input.getvertical();
         steerInput = input.GetHorizontal();
 #endif
