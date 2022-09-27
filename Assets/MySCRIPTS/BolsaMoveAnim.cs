@@ -143,7 +143,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 currentBag++;
                 if (bonusProgress != null && bonusProgress.enabled)
                 {
-                    scoreChangerCommand.ScoreOnGlobal += bonusProgress.value * MyGameplayManager.BagValue;
+                    scoreChangerCommand.ScoreOnGlobal += (int)bonusProgress.value * MyGameplayManager.BagValue;
                     scoreChangerCommand.BagsOnTruck = 0;
                     if (mediator != null)
                         mediator.Publish(scoreChangerCommand);
@@ -154,7 +154,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 else
                 {
                     if(mediator!=null)
-                    scoreChangerCommand.ScoreOnGlobal = bonusProgress.value;
+                    scoreChangerCommand.ScoreOnGlobal = (int)bonusProgress.value;
                 }
                 state = 0;
                 if (currentBag == bolsasDisponibles)

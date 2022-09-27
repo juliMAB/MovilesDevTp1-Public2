@@ -32,7 +32,7 @@ public class CanvasGameManager : MonoBehaviour
     private void ScoreChangeUI(ScoreChangedCommand c)
     {
         bagsOnTruckTMP.text = "Truck: " + c.BagsOnTruck.ToString();
-        totalMoneyTMP.text = "Total: " + c.ScoreOnGlobal.ToString();
+        totalMoneyTMP.text = "$" + c.ScoreOnGlobal.ToString();
 
         switch (c.BagsOnTruck)
         {

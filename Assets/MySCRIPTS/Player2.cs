@@ -30,6 +30,7 @@ public class Player2 : MonoBehaviour, Idownloadable
             if (scoreChange.BagsOnTruck == 3)
                 return;
             scoreChange.BagsOnTruck += ipickapeable.Catch();
+            scoreChange.ScoreOnGlobal += MyGameplayManager.BagValue;
             mediator.Publish(scoreChange);
             return;
         }

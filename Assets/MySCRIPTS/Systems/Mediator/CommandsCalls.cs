@@ -6,7 +6,7 @@ class ScoreChangedCommand : ICommand
         get;
         set;
     }
-    public float ScoreOnGlobal
+    public int ScoreOnGlobal
     {
         get;
         set;

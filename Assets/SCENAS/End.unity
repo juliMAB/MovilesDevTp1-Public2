@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 517083268}
   - component: {fileID: 517083270}
   - component: {fileID: 517083269}
+  - component: {fileID: 517083271}
   m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
@@ -198,6 +199,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517083267}
   m_CullTransparentMesh: 1
+--- !u!114 &517083271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517083267}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f536944a8b655bd4d8262fef63349b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 595617821}
 --- !u!1 &550398350
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +223,7 @@ GameObject:
   - component: {fileID: 550398351}
   - component: {fileID: 550398353}
   - component: {fileID: 550398352}
+  - component: {fileID: 550398354}
   m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
@@ -274,6 +289,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550398350}
   m_CullTransparentMesh: 1
+--- !u!114 &550398354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550398350}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f536944a8b655bd4d8262fef63349b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 918167655}
 --- !u!1 &595617819
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &595617820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -321,7 +349,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a042b4e73e78390499693990c98ccc24, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.158
   m_Pitch: 1
   Loop: 0
@@ -729,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &918167654
 RectTransform:
   m_ObjectHideFlags: 0
@@ -760,7 +788,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a042b4e73e78390499693990c98ccc24, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.158
   m_Pitch: 1
   Loop: 0
@@ -1184,7 +1212,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.25
+  m_fontSize: 44.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1265,9 +1293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  two_players: 1
+  two_players: 0
   score1: 1
-  score2: 0
+  score2: 10
   dificulty: 0
 --- !u!4 &1235789182
 Transform:
@@ -1453,7 +1481,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.9
+  m_fontSize: 72
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1692,7 +1720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.13933465}
   m_AnchorMax: {x: 0.5234597, y: 0.9042974}
-  m_AnchoredPosition: {x: -16.574005, y: -0.0000019073486}
+  m_AnchoredPosition: {x: -16.57402, y: 0}
   m_SizeDelta: {x: -16.5736, y: -18.0913}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1904235374
@@ -1756,7 +1784,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.45
+  m_fontSize: 39.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1892,7 +1920,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49
+  m_fontSize: 72
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2040,7 +2068,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.6
+  m_fontSize: 66.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

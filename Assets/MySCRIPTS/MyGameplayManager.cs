@@ -28,14 +28,14 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
 
     [SerializeField] float[] score = new float[2];
 
-    private static int bagValue = 1;
+    private static int bagValue = 250;
 
     private FadeController m_fadeController;
 
     [SerializeField] GameObject factoryLevel;
 
     public static bool TwoPlayers { get => twoPlayers; set => twoPlayers = value; }
-    public static int BagValue { get => bagValue; set => bagValue = value; }
+    public static int BagValue { get => bagValue; }
 
     private void OnValidate()
     {
@@ -56,7 +56,7 @@ public class MyGameplayManager : MonoBehaviourSingleton<MyGameplayManager>
         go_game.SetActive(false);
         mediator[0].Subscribe<ScoreChangedCommand>(UpdateLocalScoreOne);
         if (twoPlayers)
-            mediator[0].Subscribe<ScoreChangedCommand>(UpdateLocalScoreTwo);
+            mediator[1].Subscribe<ScoreChangedCommand>(UpdateLocalScoreTwo);
         FactoryInitLevel();
     }
     private void FactoryInitLevel()
