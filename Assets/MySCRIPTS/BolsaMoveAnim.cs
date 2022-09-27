@@ -24,6 +24,8 @@ public class BolsaMoveAnim : MonoBehaviour
 
     [SerializeField] Mediator mediator = null;
 
+    [SerializeField] FixedJoystick joystick = null;
+
     private Action OnEndDescarga; 
 
     private float horizontalValue;
@@ -78,7 +80,7 @@ public class BolsaMoveAnim : MonoBehaviour
         switch (state)
         {
             case 0:
-                if (horizontalValue < 0)
+                if (horizontalValue < -0.3f)
                 {
                     bolsa[currentBag].SetActive(true);
                     bolsa[currentBag].transform.position = pos[0].position;
@@ -104,7 +106,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 }
                 return;
             case 1:
-                if (VerticalValue < 0)
+                if (VerticalValue < -0.3f)
                 {
                     if (currentAnim != null)
                         StopCoroutine(currentAnim);
@@ -113,7 +115,7 @@ public class BolsaMoveAnim : MonoBehaviour
                 }
                 return;
             case 2:
-                if (horizontalValue > 0)
+                if (horizontalValue > 0.3f)
                 {
                     if (currentAnim != null)
                         StopCoroutine(currentAnim);
@@ -161,8 +163,18 @@ public class BolsaMoveAnim : MonoBehaviour
     {
         if (!input)
             return;
+#if UNITY_EDITOR
         horizontalValue = Input.GetAxis("Horizontal");
         VerticalValue = Input.GetAxis("Vertical");
+#endif
+
+#if UNITY_ANDROID_API
+        horizontalValue = joystick.Horizontal;
+        VerticalValue = joystick.Vertical;
+
+#endif
+
+
     }
 
     IEnumerator AnimMove(Vector3 origin, Vector3 destino, Transform bag)

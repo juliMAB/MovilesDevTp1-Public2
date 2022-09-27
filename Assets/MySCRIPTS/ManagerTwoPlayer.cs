@@ -29,6 +29,8 @@ public class ManagerTwoPlayer : MonoBehaviour
         public GameObject[] assets; //camion,deposito,init;
 
         public GameObject[] canvas;
+
+        public GameObject Joestick;
     }
     [SerializeField] GameObject[] canvas1Player;
 
@@ -61,12 +63,14 @@ public class ManagerTwoPlayer : MonoBehaviour
                 playerData[(int)PjIndex.pj2].cameras[i].rect = new Rect(new Vector2(0.5f, 0), new Vector2(0.5f, 1.0f));
             }
             SetAssetsOn(PjIndex.pj2, GameStage.Intro);
+            playerData[(int)PjIndex.pj2].Joestick.SetActive(true);
         }
         else
         {
             SetCameraOn(PjIndex.pj2, GameStage.Ninguno);
             SetAssetsAllOff(PjIndex.pj2);
             SetCanvasOn(PjIndex.pj2, GameStage.Ninguno);
+            Destroy(playerData[(int)PjIndex.pj2].Joestick);
         }
     }
 
